@@ -1,6 +1,7 @@
+
 public class Stub_BD 
-{
-	void buscaInformacao(Codigo c)
+{	
+	void salvaInformacoes(Codigo c)
 	{
 		System.out.println(c);
 	}

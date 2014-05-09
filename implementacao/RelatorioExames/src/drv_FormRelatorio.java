@@ -1,12 +1,9 @@
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-public class drv_FormRelatorio 
+public class Drv_FormRelatorio 
 {
 	public static void main(String[] args) {
 		
-		RelatorioExames re = new RelatorioExames();
+		Relatorio re = new Relatorio();
 		re.exame.add("\n- Exame de Sangue - André Madureira");
 		re.exame.add("\n- Exame de Urina - André Madureira");
 		re.exame.add("\n- Exame de Fezes - André Madureira");
@@ -16,7 +13,8 @@ public class drv_FormRelatorio
 		re.exame.add("\n- Triglicérides - Barbara Soares");
 		re.exame.add("\n- Tipagem Sanguínea - Gabriela Souza");
 		re.setPeriodo("Diário");
-		System.out.println(re);
+		CtlRelatorio ctlr = new CtlRelatorio();
+		ctlr.solicitaRelatorio(re);
 		
 
 	}

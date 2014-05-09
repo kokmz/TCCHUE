@@ -1,5 +1,5 @@
 
-public class AreaCodigo
+public class Codigo
 {
 	
 	protected int codigo;
@@ -17,12 +17,12 @@ public class AreaCodigo
 		this.status = status;
 	}
 	
-	public AreaCodigo(int codigo, String status) {
+	public Codigo(int codigo, String status) {
 		super();
 		this.codigo = codigo;
 		this.status = status;
 	}
-	public AreaCodigo() {
+	public Codigo() {
 		super();
 	}
 	

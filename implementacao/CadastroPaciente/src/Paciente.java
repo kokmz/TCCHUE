@@ -1,5 +1,5 @@
 
-public class CadastroPaciente 
+public class Paciente 
 {
 	protected String nome, endereco, convenio, CPF, dt_nascimento;
 	protected int RG, Telefone;
