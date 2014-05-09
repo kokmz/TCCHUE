@@ -1,5 +1,5 @@
 
-public class CadastroGestor {
+public class Gestor {
 	protected String nome, endereco, convenio, CPF, dt_nascimento;
 	protected int RG, Telefone;
 	

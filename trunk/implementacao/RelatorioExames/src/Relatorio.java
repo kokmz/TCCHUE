@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 
-public class RelatorioExames 
+public class Relatorio 
 {
 	ArrayList<String> exame = new ArrayList<String> ();
 	protected String periodo;
