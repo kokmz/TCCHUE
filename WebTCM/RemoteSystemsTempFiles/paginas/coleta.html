@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Hue - Laboratorio Medicinal</title>
+<link rel="stylesheet" type="text/css" href="../estilos.css"/>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+<script type='text/javascript' src="../menu_jquery.js"></script>
+<script type="text/javascript" src="../script/script.js"></script>
+<script type="text/javascript" src="../script/indicacao_erro_com_mensagem.js"></script>
+</head>
+<body>
+	<div id="cabecalho">
+	<img src="../images/banner.png">
+	</div>   
+	<div id="pagina">
+	<div id='cssmenu'>
+<ul>
+   <li><a href='../index.html'><span>Inicio</span></a></li>
+   <li class='has-sub'><a href='#'><span>Exames</span></a>
+      <ul>
+         <li><a href='biocheck.html'><span>Biocheck up</span></a></li>
+         <li class='last'><a href='laboratoriais.html'><span>Laboratoriais</span></a></li>
+      </ul>
+   </li>
+   <li class='active'><a href='coleta.html'><span>Coleta domiciliar</span></a></li>
+   <li class='last'><a href='contato.html'><span>Contato</span></a></li>
+</ul>
+</div>
+	<div id="conteudo">
+	<div id="formsite">
+		<h1>Coleta Domiciliar</h1>
+		<p> Campos marcados com * são obrigatorios</p>
+		<div id="exemplo08">
+			<ul id="lista_erros" class="mensagem_erro">
+    		</ul>
+		
+			<form action="#" onsubmit="javascript:return validaFormulario(this);">
+		      <p>
+		        <label class="requerido" id="labelNome" for="nome">Nome:</label>
+		        <input type="text" id="nome"></input><br/>
+
+				<label class="requerido" id="labelRg" for="rg">RG:</label>
+				<input type="text" id="rg"></input><br/>
+
+				<label class="requerido" id="labelTelefone" for="telefone">Telefone:</label>
+				<input type="text" id="telefone"></input><br/>
+
+				<label class="requerido" id="labelData" for="data">Data de nascimento:</label>
+				<input type="text" id="data"></input><br/>
+
+				<label id="labelSexo" for="sexo">Sexo:</label>
+				<label id="Masculino" for="sexo">Masculino</label>
+				<input type="radio" name="sexo" id="radiom"><br/>
+				<label id="Feminino" for="sexo">Feminino</label>
+			    <input type="radio" name="sexo" id="radiof"><br/>
+
+				<label class="requerido" id="labelEndereco" for="endereco">Endereço:</label>
+				<input type="text" id="endereco"></input><br/>
+
+				<label class="requerido" id="labelNumero" for="numero">Número:</label>
+				<input type="text" id="numero"></input><br/>
+
+				<label id="labelComplemento" for="complemento">Complemento:</label>
+				<input type="text" id="complemento"></input><br/>
+		
+				<label class="requerido" id="labelBairro" for="bairro">Bairro:</label>
+				<input type="text" id="bairro"></input><br/>
+
+				<label class="requerido" id="labelCidade" for="cidade">Cidade:</label>
+				<input type="text" id="cidade"></input><br/>
+
+				<label class="requerido" id="labelMedico" for="medico">Médico Solicitante:</label>
+				<input type="text" id="medico"></input><br/>
+
+				<label class="requerido" id="labelEspec" for="espec">Especialidade:</label>
+				<input type="text" id="espec"></input><br/>
+
+				<label class="requerido" id="labelDatah" for="datah">Data:</label>
+				<input type="text" id="datah"></input><br/>
+
+				<label class="requerido" id="labelHora" for="hora">Hora:</label>
+				<input type="text" id="hora"></input><br/>
+
+				<label class="requerido" id="labelEmail" for="email">E-mail:</label>
+				<input type="text" id="email"></input><br/>
+		      </p>
+		      <p>
+		        <input type="submit"/>
+		      </p>
+		    </form>
+		</div>
+	</div>	
+	</div>
+	<div id="rodape">
+        <address>Hue Lab &copy;2014 <a href="mailto: contato@HueLab.com.br">Contato</a></address>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+<div id='pagina'>
+<div id='cssmenu'>
+	<ul>
+   		<li class='active'><a href='index.jsp'><span>Inicio</span></a></li>
+   		<li><a href='laboratorias.jsp'><span>Exames</span></a></li>
+   		<li><a href='quemsou.jsp'><span>Quem Somos</span></a></li>
+   		<li class='last'><a href='contato.jsp'><span>Contato</span></a></li>
+	</ul>   
+	<ul>	
+   		<c:if test="${loginUsuario.perfil.gestor}">
+			<li><a href='gestor1.jsp'><span>Cadastros</span></a></li>
+			<li><a href='ListaPacienteServlet'><span>Pacientes Cadastrados</span></a></li>			
+		</c:if>
+		</ul>
+		<c:if test="${loginUsuario.perfil.admin}">
+			<li><a href='admin1.jsp'><span>Cadastros</span></a></li>
+			<li><a href='admin2.jsp'><span>Cadastro de Exames</span></a></li>			
+		</c:if>
+		<c:if test="${loginUsuario.perfil.paciente}">
+			<li><a href=''><span>Consulte seu exame</span></a></li>
+		</c:if>
+		
+		<li class='last'><a href='contato.jsp'><span>Contato</span></a></li>
+		
+		<c:if test="${loginUsuario.perfil.gestor}">
+			<li><a href="LogoutServlet"><span>Sair</span></a></li>		
+			</c:if>	
+		<c:if test="${loginUsuario.perfil.admin}">
+			<li><a href="LogoutServlet"><span>Sair</span></a></li>		
+		</c:if>
+		<c:if test="${loginUsuario.perfil.paciente}">
+			<li><a href="LogoutServlet"><span>Sair</span></a></li>		
+		</c:if>	
+	</ul>
+ </div>
+</div>
