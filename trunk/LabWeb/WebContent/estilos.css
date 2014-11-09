@@ -14,31 +14,26 @@ body {
 #pagina {  
   width:1000px;
   height:100%;
-  background-color: #282828;
   margin:auto;
 }
 
-
-
-/* tamanho em porcentagem */
-
-
-#pagina {  
-  width:1000px;
-  height: 100%;
-  background-color: #282828;
-  }
-
 /* cabeçalho */
+
+#banner{
+   width:1000px;
+   height: 0;
+   margin: 0 auto;
+  
+}
 
 #cabecalho{
    width:1000px;
-   height:380px;
+   height:113px;
    margin: 0 auto;   
 }
 
 #login{
-   width:80px;
+   width:240x;
    height:190px;
    margin-left:770px;   
 }
@@ -46,7 +41,7 @@ body {
 #verificarcod{
    width:180px;
    margin-left:770px;
-   margin-top: 30px;   
+   margin-top: 30px; 
 }
 
 #InfoExame{
@@ -78,6 +73,7 @@ h1{
   background-color:white;
   float:right;
   max-height: 900px;
+  height: 600px;
  }
 
 #conteudo ol li a {
@@ -114,31 +110,14 @@ margin-bottom: 15px;
 
 
 #rodape { 
-  margin-top: 5px;
   clear:both;
-  height: 0;
-  text-align: right;
-  color: black;
+  text-align: center;
 }
 
 #rodape a {
   color: #4682B4;
 }
 
-#rodapeA {
-  margin-top: 400px;
-  clear:both;
-  height: 0;
-  text-align: right;
-  color: black;
-  background-color:white;
-  width:1440px;
-  height: 100%;
-}
-
-#rodapeA a {
-  color: #eb3dee;
-}
 
 /* css tabela */
 
@@ -158,49 +137,121 @@ th{
 
 /* Alinhamento do formulario contato via css */
 
-#labelNome{
+#nome_contato{
    margin-left:49px;
 }
 
-#labelEmail{
-   margin-left:47px;
+#email_contato{
+   margin-left:51px;
 }
 
-#labelMensagem{
-   margin-left:22px;
-   position:absolute;
+#mensagem_contato{
+   margin-left:23px;
+   
 }
 
 #mensagem{
-   margin-left:94px;
+	margin-left:85px;
+	position:absolute;
+	top:324px;
+	
 }
 
 #botaum{
-   margin-left:415px;
+  margin-top:100px;
+  margin-left:430px;
 }
 
-/* Alinhamento do formulario CadGestor via css */
 
-#labelNomeG{
-   margin-left:120px;
+
+/* Alinhamento do formulario Cadastro de paciente via css */
+
+#cod_p{
+	margin-left:92px;
 }
 
-#labelRgG{
-   margin-left:134px;
+
+#nome_p{
+   margin-left:177px;
 }
 
-#labelCpfG{
-   margin-left:128px;
+#rg_p{
+   margin-left:191px;
 }
 
-#labelDatanascG{
-   margin-left:60px;
+#cpf_p{
+   margin-left:185px;
+}
+
+#data_p{
+   margin-left:100px;
+}
+
+#rua_p{
+   margin-left:188px;
+}
+
+#numero_p{
+   margin-left:167px;	
+}
+
+#bairro_p{
+   margin-left:178px;
+}
+
+#cep_p{
+	margin-left:184px;
+}
+
+#telefone_p{
+	margin-left:163px;
+}
+
+#email_p{
+	margin-left:180px;
+}
+
+#convenio_p{
+	margin-left:161px;
 }
 
 #botaum2{
-   margin-left:263px;
+   margin-left:298px;
 }
 
+#botaogera{
+    margin-left:250px;
+ 
+}
+
+/* Alinhamento do formulario lista de exames via css */
+
+#exame_nome{
+	margin-left:100px;
+}
+
+#procedimento{
+	 margin-left:116px;
+}
+
+#procedimentoL{
+	margin-left:193px;
+	position:absolute;
+	top:264px;
+}
+
+#botaum3{
+  margin-top:80px;
+  margin-left:558px;
+}
+
+
+/* css da tabela de exames */
+.conteudoExames { width:725px!important; margin:0 0 0 150px!important; float:left!important; }
+	ul.lista-exames { width:722px; clear:both; margin:0; padding:0; overflow:auto; height:400px; }
+	ul.lista-exames li { list-style:none; margin:0 0 6px 0; padding:5px; width:100%; float:left; background:#FFF; }
+	ul.lista-exames li:nth-child(even) {background: #ECECEC}
+	ul.lista-exames li:nth-child(odd) {background: #FFF}
 
 /* campo obrigatorio */
 

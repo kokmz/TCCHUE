@@ -24,11 +24,11 @@ public class ObterGestorServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		int idUsuario = -1;
-		if (request.getParameter("usuario") != null)
+		if (request.getParameter("gestor") != null)
 		{
 			try 
 			{
-				idUsuario = Integer.parseInt(request.getParameter("usuario"));
+				idUsuario = Integer.parseInt(request.getParameter("gestor"));
 			}
 			catch (Exception ex)
 			{
@@ -46,10 +46,10 @@ public class ObterGestorServlet extends HttpServlet {
 		{
 			UsuarioDao usuarioDao = new UsuarioDao();
 
-			Usuario usuario = usuarioDao.getUsuario("nome","password");
+			Usuario usuario = usuarioDao.getUsarioCompleto(idUsuario);
 
 			//grava o aluno no escopo de requisição para acessar no arquivo index.jsp
-			request.setAttribute("usuario", usuario);
+			request.setAttribute("gestor", usuario);
 			getServletContext().getRequestDispatcher( "/montaGestor.jsp").forward(request, response);
 		}
 	}

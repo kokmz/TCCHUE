@@ -8,7 +8,7 @@
 <div id="conteudo">
 <div id="formulario">
 
- <c:if test="${loginUsuario.perfil.administrador}">  
+ <c:if test="${loginUsuario.perfil.admin}">  
  <p>
 		<a href="ListaGestorServlet">Visualizar Gestores</a>
 </p>
@@ -17,11 +17,11 @@
 			<c:if test="${not empty gestor}">
 			<input type="hidden" name="idUsuario" value="${gestor.id_usuario}"/>
 		  	</c:if>
-			<p><label for="nome">Nome</label><br/> <input type="text" name="nome" value="${empty gestor ? param.nome : gestor.nome }"/></p>
+			<p><label for="nome">Nome</label><br/> <input type="text" name="nome" value="${empty gestor ? param.nome : gestor.nome}"/></p>
 			<p><label for="telefone">Telefone</label> <br /> <input type="text"	name="telefone" value="${empty gestor ? param.telefone : gestor.telefone}"/></p>
 			<p><label for="email">Email</label> <br /> <input type="text" name="email" value="${empty gestor ? param.email : gestor.email}"/></p>			
 			<p><label for="password">Senha</label><br/> <input type="password" name="password" value="${empty gestor ? param.password : gestor.password }"/></p>
-			<p><label for="conf_password">Confirme a senha</label><br/> <input type="password" name="conf_password" value="${empty gestor ? param.conf_password : paciente.conf_password }"/></p>
+			<p><label for="conf_password">Confirme a senha</label><br/> <input type="password" name="conf_password" value="${empty gestor ? param.password : paciente.password }"/></p>
 			
 		
 			<input type="submit" value="Enviar" />

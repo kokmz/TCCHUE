@@ -20,18 +20,17 @@
 	<jsp:include page="mensagem.jsp"/>
 	
 <c:if test="${empty loginUsuario}">
-
 <jsp:forward page="montaGestor.jsp"/>  
-
 </c:if>
+
 <div id="pagina">
 <div id="conteudo">
   <p>
-    <a href="gestor1.jsp">Adicionar Novo Paciente</a> 
+    <a href="montaGestor.jsp">Adicionar Novo Gestor</a> 
   </p>
 
 <c:choose>
-  <c:when test="${empty gestores}">
+  <c:when test="${empty usuarios}">
     <p>Nenhum Gestor cadastrado!</p>
   </c:when>
   <c:otherwise>
@@ -62,9 +61,9 @@
       </td>
       <td>
       	<a href="ObterGestorServlet?gestor=${gestor.id_usuario}">Editar</a>
-      </td>
-      <td>      	
-      	<a href="DeletarGestorServlet?gestor=${paciente.id_usuario}">Remover</a>
+      	</td>
+      	<td>    	
+      	<a href="DeletarGestorServlet?gestor=${gestor.id_usuario}">Remover</a>
       </td>
     </tr>
     
@@ -74,9 +73,10 @@
 
   </c:otherwise>
  </c:choose>
-<%@include file="paginas/rodape.html" %>
+
 
 </div>
 </div>
+<%@include file="paginas/rodape.html" %>
 </body>
 </html>

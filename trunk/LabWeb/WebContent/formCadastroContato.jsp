@@ -5,6 +5,8 @@
 <jsp:include page="mensagem.jsp"/>
 <div id="pagina">
 <div id="conteudo">
+<h1>Contato</h1>
+<p>Preencha os campos abaixo e envie sua duvida para nós!</p>
 <div id="formulario">
 
 
@@ -13,12 +15,11 @@
 			<c:if test="${not empty duvida}">
 			<input type="hidden" name="idDuvida" value="${duvida.id_duvida}"/>
 			</c:if>
-			<p><label for="nome">Nome</label><br/> <input type="text" name="nome" value="${empty duvida ? param.nome : duvida.nome }"/></p>
-			<p><label for="email">Email</label> <br /> <input type="text" name="email" value="${empty duvida ? param.email : duvida.email}" /></p>
-			<p><label for="mensagem">Mensagem</label><br/><textarea rows="4" cols="50" id="mensagem" name="mensagem" value="${empty duvida ? param.mensagem : duvida.mensagem}"/></textarea></p>
-			<input type="hidden" name="status" value="${duvida.status}"/>
-			
-			<input type="submit" value="Enviar" />
+			<p><label id="nome_contato" for="nome">Nome:</label><input id="nome" type="text" name="nome" value="${empty duvida ? param.nome : duvida.nome }"/></p>
+			<p><label id="email_contato" for="email">Email:</label><input id="email" type="text" name="email" value="${empty duvida ? param.email : duvida.email}" /></p>
+			<p><label id="mensagem_contato" for="mensagem" >Mensagem:</label></p>
+			<textarea id="mensagem" name="mensagem" rows="6" cols="50" />${empty duvida ? param.mensagem : duvida.mensagem}</textarea><input type="hidden" name="status" value="${duvida.status}"/>
+			<p><input type="submit" value="Enviar" id="botaum" /></p>
 	</form>
 </div>
 </div>

@@ -49,8 +49,7 @@
       <th>Telefone</th>
       <th>Email</th>
       <th>Convênio</th>
-      <th>Descricao do Exame</th>     
-      	<th colspan="2">Ações</th>
+    	<th colspan="2">Ações</th>
     </tr>
     
     <c:forEach var="paciente" items="${pacientes}">    
@@ -93,9 +92,6 @@
 		<td>
 			${paciente.convenio_paciente}
 		</td>		
-	  <td>       
-        ${paciente.exame.descricao}
-      </td>
       <td>
       	<a href="ObterPacienteServlet?paciente=${paciente.id}">Editar</a>
       </td>
@@ -110,9 +106,10 @@
 
   </c:otherwise>
  </c:choose>
-<%@include file="paginas/rodape.html" %>
+
 
 </div>
 </div>
+<%@include file="paginas/rodape.html" %>
 </body>
 </html>

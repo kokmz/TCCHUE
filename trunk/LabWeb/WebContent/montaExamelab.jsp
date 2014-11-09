@@ -13,7 +13,7 @@
 <body>
 	<%@include file="inicio.jsp" %>
 	<%@include file="paginasjsp/menu.jsp" %>
-	<%@include file="paginas/laboratoriais.html" %>
+	<%@include file="formCadastroExamelab.jsp" %>
 	<%@include file="paginas/rodape.html" %>
 
 </body>

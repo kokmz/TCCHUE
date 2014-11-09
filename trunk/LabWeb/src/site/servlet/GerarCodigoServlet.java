@@ -30,11 +30,9 @@ public class GerarCodigoServlet extends HttpServlet {
 		try {    
 			
 			GerarCodigoDao gerarcodigoDao = new GerarCodigoDao();
+			gerarcodigoDao.createCodigo();
 			
-			Integer cod_verificacao = 0;
-			gerarcodigoDao.createCodigo(cod_verificacao);
-			
-			request.setAttribute("cod_verificacao", cod_verificacao);
+			//request.setAttribute("cod_verificacao", cod_verificacao);
 
 		}
 		catch (Exception e) {

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import site.dao.PacienteDao;
-import site.vo.Exame;
 import site.vo.Paciente;
 
 
@@ -31,7 +30,6 @@ public class PacienteServlet extends HttpServlet {
 
 		try {    
 			String idPaciente = request.getParameter("idPaciente");
-			String idExame = request.getParameter("idExame");
 			Integer cod_verif = Integer.parseInt(request.getParameter("cod_verif"));
 			String nome_paciente = request.getParameter("nome_paciente");
 			String rg_paciente = request.getParameter("rg_paciente");
@@ -44,19 +42,15 @@ public class PacienteServlet extends HttpServlet {
 			String telefone_paciente = request.getParameter("telefone_paciente");
 			String email_paciente = request.getParameter("email_paciente");
 			String convenio_paciente = request.getParameter("convenio_paciente");
-			String descricao =  request.getParameter("descricao");
 
 			if (cod_verif != null && nome_paciente != null && !nome_paciente.isEmpty() && rg_paciente != null && !rg_paciente.isEmpty() && cpf_paciente != null && !cpf_paciente.isEmpty() && datanasc_paciente != null && !datanasc_paciente.isEmpty() && endereco_rua != null && !endereco_rua.isEmpty() && endereco_num != null && endereco_bairro !=null && !endereco_bairro.isEmpty() && cep !=null && !cep.isEmpty() && telefone_paciente !=null && !telefone_paciente.isEmpty() && email_paciente !=null && !email_paciente.isEmpty() && convenio_paciente !=null && !convenio_paciente.isEmpty()){
-				if (descricao == null)
+				if (cod_verif == null)
 				{
 					request.setAttribute("mensagemErro", "campos vazios!");
 					getServletContext().getRequestDispatcher("/gestor1.jsp").forward(request, response);          
 				}
 				else
 				{
-					Exame novoExame = new Exame();
-					novoExame.setDescricao(descricao);
-
 					Paciente novoPaciente = new Paciente();
 					novoPaciente.setCod_verif(cod_verif);
 					novoPaciente.setNome_paciente(nome_paciente);
@@ -70,13 +64,11 @@ public class PacienteServlet extends HttpServlet {
 					novoPaciente.setTelefone_paciente(telefone_paciente);
 					novoPaciente.setEmail_paciente(email_paciente);
 					novoPaciente.setConvenio_paciente(convenio_paciente);
-					novoPaciente.setExame(novoExame);
 					
 
 					if (idPaciente != null)
 					{
 						novoPaciente.setId(Integer.parseInt(idPaciente));
-						novoExame.setId(Integer.parseInt(idExame));
 					}
 					
 					PacienteDao PacienteDao = new PacienteDao();

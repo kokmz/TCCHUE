@@ -13,12 +13,8 @@
 <title>Hue - Laboratorio Medicinal</title>
 </head>
 <body>
-<div id="cabecalho">
 	<%@include file="inicio.jsp" %>
 	<%@include file="paginasjsp/menu.jsp" %>
-
-
-</div>
 <div id="pagina">
 <div id="conteudo">
 		<div id="verificarcod">
@@ -30,9 +26,7 @@
 		</fieldset>
 		</div>
 </div>
-	
+</div>		
 	<%@include file="paginas/rodape.html" %>
-</div>	
-	
 </body>
 </html>

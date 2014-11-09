@@ -68,9 +68,9 @@
 
   </c:otherwise>
  </c:choose>
-<%@include file="paginas/rodape.html" %>
 
 </div>
 </div>
+<%@include file="paginas/rodape.html" %>
 </body>
 </html>
