@@ -13,7 +13,9 @@
 <body>
 	<%@include file="inicio.jsp" %>
 	<%@include file="paginasjsp/menu.jsp" %>
-	<%@include file="formCadastroExames.jsp" %>
+	<%@include file="mostraProcedimento.jsp" %>
 	<%@include file="paginas/rodape.html" %>
+
+
 </body>
 </html>

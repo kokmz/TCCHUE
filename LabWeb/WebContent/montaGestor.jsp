@@ -16,12 +16,6 @@
 	<%@include file="formCadastroAdmin.jsp" %>
 	<%@include file="paginas/rodape.html" %>
 
-<!-- validando se ha erros e mostrando uma menssagem caso positivo -->	
-		<c:if test="${not empty mensagemErro}">
-			  <script type="text/javascript">
-			  		alert('${mensagemErro}');
-			  </script>
-		</c:if>
 
 </body>
 </html>

@@ -1,39 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
+
 <div id="pagina">
 <div id="conteudo">
-<div id="formulario">
-	<form action="cadastroServlet" method="post">
-			<p>${msgerro}</p>
-			<p>
-				<label for="codigo">Codigo</label> <br /> <input type="text"
-					name="codigo" value='${param.codigo}' />
-			</p>
-			<p>
-				<label for="exame">Exame</label> <br /> <input type="text"
-					name="exame" value='${param.exame}' />
-			</p>
-			<p>
-				<label for="medico">Medico</label> <br /> <input type="text"
-					name="medico" value='${param.medico}' />
-			</p>
-			<p>
-				<label for="crm_medico">CRM Medico</label> <br /> <input type="text"
-					name="crm_medico" value='${param.crm_medico}' />
-			</p>
-			<p>
-				<label for="convenio">Convenio</label> <br /> <input type="text"
-					name="convenio" value='${param.convenio}' />
-			</p>
-			<p>
-				<label for="data_exame">Data do exame</label> <br /> <input type="text"
-					name="data_exame" value='${param.data_exame}' />
-			</p>
-			<p>
-				<label for="descricao">Descrição Medica</label> <br /> <input type="text"
-					name="descricao" value='${param.descricao}' />
-			</p>
+ <h1>Cadastro de Exame para acompanhamento</h1>
+	<form id = "resultExame" action="cadResultadoExameServlet" method="post">	
+	
+		<label id="cboPaciente" for="paciente">Paciente: </label>
+		<select name="paciente">
 			
+  			<c:forEach var="paciente" items="${pacientes}">  
+  				<option value="${paciente.id}">${paciente.nome_paciente}</option> 
+  			</c:forEach>    
+		</select>
+		
+		
+		<p><label id="cboExame" for="exame">Exame: </label>
+		<select name="exame">
+			
+  			<c:forEach var="exame" items="${exames}">  
+  				<option value="${exame.id_tabelaExame}">${exame.exame_nome}</option> 
+  			</c:forEach>    
+		</select>
+		
+		<p><label for="descricao" >Descrição / Resultado Exame:</label></p>
+		<textarea id=descricao name="descricao" rows="10" cols="75" />${empty resultExame ? param.descricao : resultExame.descricao}</textarea>
+
+			
+		<p><label for="status">Status: </label>
+		<select name="status">
+				<option value="Pendente">Pendente</option>
+				<option value="Pronto">Pronto</option>
+		</select>
+						<br/><br/>
+		
 			<input type="submit" value="Enviar" />
 	</form>
-</div>
 </div>
 </div>

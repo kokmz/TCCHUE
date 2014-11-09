@@ -54,10 +54,11 @@ public class FiltroSemAcessoAdmin implements Filter {
         		res.sendRedirect(req.getServletContext().getContextPath() + "/index.jsp");
         		return;
         	}        	
-        }
+        }else{
 
         // passa a requisição adiante
         chain.doFilter(request, response);
+	}
 	}
 
 	/**

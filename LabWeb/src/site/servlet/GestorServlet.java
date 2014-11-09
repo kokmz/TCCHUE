@@ -39,9 +39,9 @@ public class GestorServlet extends HttpServlet {
 			
 			
 			if (nome != null && !nome.isEmpty() && telefone != null && !telefone.isEmpty() && email != null && !email.isEmpty() && password != null && !password.isEmpty()){
-				if (conf_password != password)
+				if (conf_password == null)
 				{
-					request.setAttribute("mensagemErro", "Senhas não conferem!");
+					request.setAttribute("mensagemErro", "Campos vazios");
 					getServletContext().getRequestDispatcher("/montaGestor.jsp").forward(request, response);          
 				}
 				else

@@ -32,11 +32,11 @@ public class ListaPacienteServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//tenta obter lista de alunos da aplicação
+		
 		PacienteDao pacienteDao = new PacienteDao();
 		List<Paciente> pacientes = pacienteDao.getPacientes();
 
-		//grava a lista de alunos no escopo de requisição para acessar no arquivo alunos.jsp
+		
 		request.setAttribute("pacientes", pacientes);
 		getServletContext().getRequestDispatcher( "/paciente.jsp").forward(request, response);
 	}

@@ -8,29 +8,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import site.dao.UsuarioDao;
+import site.dao.ExamelabDao;
 
 /**
- * Servlet implementation class DeletarGestorServlet
+ * Servlet implementation class DeletarExamelabServlet
  */
-@WebServlet("/DeletarGestorServlet")
-public class DeletarGestorServlet extends HttpServlet {
+@WebServlet("/DeletarExamelabServlet")
+public class DeletarExamelabServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeletarGestorServlet() {
+    public DeletarExamelabServlet() {
         super();
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idUsuario = -1;
-		if (request.getParameter("gestor") != null)
+		int id_tabelaExame = -1;
+		if (request.getParameter("exame") != null)
 		{
 			try 
 			{
-				idUsuario = Integer.parseInt(request.getParameter("gestor"));
+				id_tabelaExame = Integer.parseInt(request.getParameter("exame"));
 			}
 			catch (Exception ex)
 			{
@@ -39,18 +39,18 @@ public class DeletarGestorServlet extends HttpServlet {
 		}  
 
 		//se id aluno for inválido, retorna usuário para a página index para informar o erro
-		if (idUsuario < 0)
+		if (id_tabelaExame < 0)
 		{
-			request.setAttribute("mensagemErro", "Id do gestor inválido");
-			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+			request.setAttribute("mensagemErro", "Id do exame inválido.");
+			getServletContext().getRequestDispatcher("/exames_laboratoriais.jsp").forward(request, response);
 		}
 		else
 		{
-			UsuarioDao usuarioDao = new UsuarioDao();
-			usuarioDao.deleteUsuario(idUsuario);
+			ExamelabDao examelabDao = new ExamelabDao();
+			examelabDao.deleteExamelab(id_tabelaExame);
 
 			//requisição foi bem sucedida, vamos finaliza-la e redirecionar o usuario para outro servlet
-			response.sendRedirect(getServletContext().getContextPath() + "/ListaGestorServlet");
+			response.sendRedirect(getServletContext().getContextPath() + "/exames_laboratoriais.jsp");
 		}
 	}
 

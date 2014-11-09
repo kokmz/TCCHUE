@@ -13,6 +13,61 @@ import com.mysql.jdbc.Statement;
 
 public class UsuarioDao extends Dao {
 	
+	public Usuario getUsarioCompleto(int idUsuario)
+	{
+		Connection conn = null;
+		
+		
+		try{
+			
+			conn = getConnection();
+		String sql = "SELECT id_usuario, nome, telefone, email, password FROM usuarios where id_usuario=?";
+		
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		stmt.setInt(1, idUsuario);
+		ResultSet result = stmt.executeQuery();
+		
+		if(result.next())
+		{
+			Usuario usuario = new Usuario();
+			
+			usuario.setId_usuario(result.getInt("id_usuario"));
+			usuario.setNome(result.getString("nome"));
+			usuario.setTelefone(result.getString("telefone"));
+			usuario.setEmail(result.getString("email"));
+			usuario.setPassword(result.getString("password"));
+			
+			return usuario;
+		}
+		else
+	      {
+	        return null;
+	      }
+		}
+	    catch (Exception ex)
+	    {
+	      ex.printStackTrace();
+	      return null;
+	    }
+	    finally
+	    {
+	      if (conn != null)
+	      {
+	        try
+	        {
+	          conn.close();
+	        }
+	        catch(Exception closeEx)
+	        {
+	          //do nothing
+	        }
+	      }
+	    }
+	}
+	
+	
+	
+	
 	public Usuario getUsuario(String nome, String password)
 	{
 	    Connection conn = null;
@@ -79,7 +134,7 @@ public class UsuarioDao extends Dao {
 		{
 			conn = getConnection();
 
-			String sql = "SELECT id_usuario, nome, telefone, email, password FROM usuarios WHERE password=SHA1(?)";        
+			String sql = "SELECT id_usuario, nome, telefone, email, password FROM usuarios";        
 
 			PreparedStatement stmt = conn.prepareStatement(sql);      
 			ResultSet result = stmt.executeQuery();
@@ -131,7 +186,7 @@ public boolean insertUsuario(Usuario usuario)
 		conn.setAutoCommit(false);
 
 		//define SQL para inserção
-		String sql = "insert into usuarios (nome, telefone, email, password, perfil_usuario) values (?, ?, ?, ?, 2);";
+		String sql = "insert into usuarios (nome, telefone, email, password, perfil_usuario) values (?, ?, ?, SHA1(?), 2);";
 			
 				       
 
@@ -199,7 +254,7 @@ public boolean updateUsuario(Usuario usuario)
 		conn.setAutoCommit(false);
 
 		//define SQL para atualização
-		String sql = "UPDATE usuarios SET nome=?, telefone=?, email=?, password=?  WHERE id_usuario=?";        
+		String sql = "UPDATE usuarios SET nome=?, telefone=?, email=?, password=SHA1(?)  WHERE id_usuario=?";        
 
 		//instance Prepared statement especificando os parâmetros do SQL
 		PreparedStatement stmt = conn.prepareStatement(sql);

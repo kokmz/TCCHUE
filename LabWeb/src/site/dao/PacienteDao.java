@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import site.vo.Exame;
 import site.vo.Paciente;
 
 
@@ -21,7 +20,7 @@ public class PacienteDao extends Dao {
 		{
 			conn = getConnection();
 
-			String sql = "SELECT a.id_paciente, a.cod_verif, a.nome_paciente, a.rg_paciente, a.cpf_paciente, a.datanasc_paciente, a.endereco_rua, a.endereco_num, a.endereco_bairro, a.cep, a.telefone_paciente, a.email_paciente, a.convenio_paciente, n.id_exame, n.descricao FROM paciente a INNER JOIN exame n ON a.id_paciente = n.id_paciente WHERE a.id_paciente = ?";        
+			String sql = "SELECT id_paciente, cod_verif, nome_paciente, rg_paciente, cpf_paciente, datanasc_paciente, endereco_rua, endereco_num, endereco_bairro, cep, telefone_paciente, email_paciente, convenio_paciente FROM paciente WHERE id_paciente = ?";        
 
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, idPaciente);
@@ -43,11 +42,6 @@ public class PacienteDao extends Dao {
 				paciente.setTelefone_paciente(result.getString("telefone_paciente"));
 				paciente.setEmail_paciente(result.getString("email_paciente"));
 				paciente.setConvenio_paciente(result.getString("convenio_paciente"));
-
-				Exame exame = new Exame();
-				exame.setId(result.getInt("id_exame"));
-				exame.setDescricao(result.getString("descricao"));
-				paciente.setExame(exame);
 
 				return paciente;
 			}
@@ -86,7 +80,7 @@ public class PacienteDao extends Dao {
 		{
 			conn = getConnection();
 
-			String sql = "SELECT a.id_paciente, a.cod_verif, a.nome_paciente, a.rg_paciente, a.cpf_paciente, a.datanasc_paciente, a.endereco_rua, a.endereco_num, a.endereco_bairro, a.cep, a.telefone_paciente, a.email_paciente, a.convenio_paciente, n.id_exame, n.descricao FROM paciente a INNER JOIN exame n ON a.id_paciente = n.id_paciente";        
+			String sql = "SELECT id_paciente, cod_verif, nome_paciente, rg_paciente, cpf_paciente, datanasc_paciente, endereco_rua, endereco_num, endereco_bairro, cep, telefone_paciente, email_paciente, convenio_paciente FROM paciente";        
 
 			PreparedStatement stmt = conn.prepareStatement(sql);      
 			ResultSet result = stmt.executeQuery();
@@ -107,11 +101,6 @@ public class PacienteDao extends Dao {
 				paciente.setTelefone_paciente(result.getString("telefone_paciente"));
 				paciente.setEmail_paciente(result.getString("email_paciente"));
 				paciente.setConvenio_paciente(result.getString("convenio_paciente"));
-
-				Exame exame = new Exame();
-				exame.setId(result.getInt("id_exame"));
-				exame.setDescricao(result.getString("descricao"));
-				paciente.setExame(exame);
 
 				pacientes.add(paciente);
 			}
@@ -180,38 +169,16 @@ public class PacienteDao extends Dao {
 				//1 indica primeira coluna no resultado vindo do banco de dados
 				paciente.setId(rs.getInt(1));
 
-				//obtem valor e cria sql para inserir valor
-				Exame exame = paciente.getExame();
-				sql = "insert into exame (id_paciente, descricao) values (?, ?);";        
-
-				stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-				stmt.setInt(1, paciente.getId());
-				stmt.setString(2, exame.getDescricao());
-			
-
-				affectedRows = stmt.executeUpdate();
-				if (affectedRows > 0)
-				{
-					rs = stmt.getGeneratedKeys();
-					rs.next();
-					//obtem a chave no resultado da inserção
-					//1 indica primeira coluna no resultado vindo do banco de dados
-					exame.setId(rs.getInt(1));
-				}
-				else
-				{
-					//cancela as modificações no banco de dados
-					conn.rollback();
-					return false;
-				}
+			}
+			else
+			{
+				//cancela as modificações no banco de dados
+				conn.rollback();
+				return false;
+			}
 				//confirma as modificações no banco de dados
 				conn.commit();        
-				return true;
-			}        
-			//cancela as modificações no banco de dados
-			conn.rollback();
-			return false;
-
+				return true;    
 		}
 		catch (Exception ex)
 		{
@@ -268,19 +235,6 @@ public class PacienteDao extends Dao {
 
 			//verifica se deu certo. Se sim, atualiza a valor 
 			if (affectedRows > 0)
-			{  
-				//obtem valor e cria sql para atualizar a valor
-				Exame exame = paciente.getExame();
-				sql = "UPDATE exame SET descricao=? WHERE id_exame=?";        
-
-				stmt = conn.prepareStatement(sql);
-				
-				//o campo decimal do Banco de Dados é representado em Java por BigDecimal
-				stmt.setString(1, exame.getDescricao());
-				stmt.setInt(2, exame.getId());
-
-				affectedRows = stmt.executeUpdate();
-				if (affectedRows > 0)
 				{
 					//confirma as modificações no banco de dados
 					conn.commit();
@@ -291,13 +245,7 @@ public class PacienteDao extends Dao {
 					//cancela as modificações no banco de dados
 					conn.rollback();
 					return false;
-				}				
-			}        
-			
-			//cancela as modificações no banco de dados
-			conn.rollback();
-			return false;
-
+				}			
 		}
 		catch (Exception ex)
 		{

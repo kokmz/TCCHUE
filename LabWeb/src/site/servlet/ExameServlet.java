@@ -10,19 +10,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import site.dao.ExamelabDao;
+import site.dao.PacienteDao;
 import site.vo.Examelab;
+import site.vo.Paciente;
 
 /**
- * Servlet implementation class ListaExamelabServlet
+ * Servlet implementation class ExameServlet
  */
-@WebServlet("/ListaExamelabServlet")
-public class ListaExamelabServlet extends HttpServlet {
+@WebServlet("/ExameServlet")
+public class ExameServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ListaExamelabServlet() {
+	public ExameServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -33,25 +35,18 @@ public class ListaExamelabServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//tenta obter lista de alunos da aplicação
-		
-		String letraBusca = "";
+		PacienteDao pacienteDao = new PacienteDao();
+		List<Paciente> pacientes = pacienteDao.getPacientes();
 		
 		ExamelabDao examelabDao = new ExamelabDao();
+		List<Examelab> exames = examelabDao.getExameslabs();
 		
-		if (request.getParameter("letra") != null)
-		{
-			letraBusca = request.getParameter("letra");		
-		}
-		else 
-		{
-			letraBusca = null;			
-		}
-		
-		List<Examelab> examelabs = examelabDao.getExamelabs(letraBusca);
 
 		//grava a lista de alunos no escopo de requisição para acessar no arquivo alunos.jsp
-		request.setAttribute("examelabs", examelabs);
-		getServletContext().getRequestDispatcher( "/exames_laboratoriais.jsp").forward(request, response);
+		request.setAttribute("exames", exames);
+		request.setAttribute("pacientes", pacientes);
+		getServletContext().getRequestDispatcher( "/exame.jsp").forward(request, response);
+		
 	}
-
+	
 }
