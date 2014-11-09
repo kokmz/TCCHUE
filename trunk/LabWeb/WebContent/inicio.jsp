@@ -10,7 +10,7 @@
 <title>Hue - Laboratorio Medicinale</title>
 </head>
 <body>
-<%@include file="paginas/banner.html" %>
+
 <div id="cabecalho">
 	
 	<c:if test="${empty loginUsuario}">
