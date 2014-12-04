@@ -12,25 +12,29 @@
 <body>
 
 <div id="cabecalho">
+<%@include file="paginas/banner.html" %>	
 	
-	<c:if test="${empty loginUsuario}">
 					<div id="login">
-					<fieldset>
-						<form id="loginform" action="LoginServlet" method="post">
-						    <label><b> Login: </b></label><br>
-						    <label for="Loginform">Login:</label>
-						    <input type="text" name="login" value="${param.login}" value="usuario" />
-							<br /> 
-							<p>
-							<label for="senha">Senha:</label>
-							<input type="password" name="password" />
-							</p>
-							<input type="submit" value="Esqueci minha senha" />
-							<input type="submit" value="Entrar" />
+		<c:if test="${empty loginUsuario}">
+						<fieldset id="fieldsetform">
+							<form id="loginform" action="LoginServlet" method="post">
+						    	<label for="logincss">Login:</label>
+						    	<input id="logincss" type="text" name="login" value="${param.login}" value="usuario" />
+								<label for="senhacss">Senha:</label>
+								<input id="senhacss" type="password" name="password" />
+								<input id="esquecicss" type="submit" value="Esqueci minha senha" />
+								<input id="entrarcss" type="submit" value="Entrar" />
 							</form>	
-					</fieldset>					
-					</div>
-				</c:if>
+						</fieldset>					
+					
+		</c:if>
+		<c:if test="${loginUsuario.perfil.gestor || loginUsuario.perfil.admin}">
+		<fieldset id="fieldsetbem">
+	    <label id="bemvindo">Bem vindo, ${loginUsuario.nome}</label>
+	    </fieldset>	
+		</c:if>
+		</div>
+		
 </div> 
 
 	<!-- validando se ha erros e mostrando uma menssagem caso positivo -->	

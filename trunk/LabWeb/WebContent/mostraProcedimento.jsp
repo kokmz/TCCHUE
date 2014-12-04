@@ -6,17 +6,18 @@
 <jsp:include page="mensagem.jsp"/>
 <div id="pagina">
 <div id="conteudo">
-<div id="formulario">
+<h1>Procedimento para realizar o exame selecionado</h1>
 
-	<form id="exame" action="ExameInternaServlet" method="post">
+    <fieldset id="fieldsetexames">
+	<form id="exametabela" action="ExameInternaServlet" method="post">
 					
-			<p><label for="exame_nome">Exame</label><br/></p>
+			<h3><label for="exame_nome">Exame</label></h3>
 			<p><label for="exame_nome">${empty exame ? param.exame_nome : exame.exame_nome }</label></p>
-			<p><label for="procedimento">Procedimento</label> <br /> 
+			<h3><label for="procedimento">Procedimento</label></h3> 
 			<p><label for="procedimento">${empty exame ? param.procedimento : exame.procedimento}</label></p>
 	</form>
+	</fieldset>
+	<a href="exames_laboratoriais.jsp"><img id="voltarbotao" src="images/botaovoltar.png"></a>
 
-
-</div>
 </div>
 </div>

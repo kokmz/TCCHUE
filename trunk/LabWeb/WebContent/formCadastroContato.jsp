@@ -5,8 +5,19 @@
 <jsp:include page="mensagem.jsp"/>
 <div id="pagina">
 <div id="conteudo">
+
+<div id="ondestamos">
+<h1>Onde estamos?</h1>
+<ul>
+  <li>Rua: Desconhecida nº40, proximo Av. das Amoreiras</li>
+</ul>
+<p>Acompanhe o mapa abaixo!</p>
+<p>Horario de funcionamento: Seg a Sex das 09h as 17h e Sab e Dom das 08h ao 12h</p>
+</div>
+
 <h1>Contato</h1>
 <p>Preencha os campos abaixo e envie sua duvida para nós!</p>
+
 <div id="formulario">
 
 
@@ -21,6 +32,9 @@
 			<textarea id="mensagem" name="mensagem" rows="6" cols="50" />${empty duvida ? param.mensagem : duvida.mensagem}</textarea><input type="hidden" name="status" value="${duvida.status}"/>
 			<p><input type="submit" value="Enviar" id="botaum" /></p>
 	</form>
+</div>
+<div id="mapacontato">
+<img src="images/mapacontato.png" alt="Mapa contato"></img>
 </div>
 </div>
 </div>

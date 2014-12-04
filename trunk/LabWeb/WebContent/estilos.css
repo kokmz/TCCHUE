@@ -3,10 +3,98 @@ body {
   font: 12px Arial, Helvetica, sans-serif;
   background: #FFFFFF;
   margin: 0 auto;
-  position:relative;
+  padding: 0auto;
   overflow-y: scroll;
+  border:0;
+  outline:0;
+  lists-style-type:none;
 }
 
+form, img, a, ul, ol, li, table, tr, td, di{
+	margin:0;
+	padding:0;
+	border:none;
+	outline:none;
+	lists-style-type:none;
+}
+
+#textotabela {
+	margin-left:167px;
+}
+
+#fieldsetexames {
+	width:400px;
+	margin-left:290px;
+	margin-top:120px;
+}
+
+#fieldsetconsulta {
+	width:400px;
+	margin-left:290px;
+	margin-top:120px;
+}
+
+#botaobaixar{
+	margin-left:290px;
+	margin-top:10px;
+}
+
+#nomeexame{
+	position:absolute;
+	margin-left:290px;
+    margin-top:115px;
+	font-weight: bold;
+}
+
+#exametabela{
+	margin-left:18px;
+}
+
+#negrito{
+	font-weight: bold;
+}
+
+#voltarbotao{
+	margin-left:654px;
+	margin-top:10px;
+}
+
+#imginicio{
+	margin-top:320px;
+	margin-left:120px;
+}
+
+#especialidade{
+	position:absolute;
+	margin-left:33px;
+	margin-top:30px;
+	width:380px;
+}
+
+#atendimento{
+	position:absolute;
+	margin-left:460px;
+	margin-top:30px;
+	width:380px;
+}
+
+#divisor{
+	position:absolute;
+	margin-left:395px;
+}
+
+#mapacontato{
+	margin-top:40px;
+	margin-left:125px;
+
+}
+
+#ondestamos{
+	position:absolute;
+	margin-left:570px;
+	margin-top:65px;
+	width:380px;
+}
 
 /* página */
 
@@ -22,17 +110,78 @@ body {
 #cabecalho{
    width:1000px;
    height:113px;
-   margin: 0 auto;   
+   margin: 0 auto; 
+   position:relative;  
+}
+
+#banner{
+   width:100%;
+   height:100%;
+   top:0;
+   left:0;
+   position:absolute;
 }
 
 #login{
-   width:240x;
+   width:240px;
    height:190px;
-   margin-left:770px;   
+   margin-left:770px;
+   margin-top:3px;
+   top:0;
+   left:0;  
+   position:absolute;
+   float:none;
 }
 
+#fieldsetform{
+   border:none;
+   
+}
+
+#fieldsetbem{
+   width:207px;
+   height:95px;
+}
+
+#bemvindo{
+   margin-left:47px;
+   margin-top:47px;
+   position:absolute;
+  
+}
+
+#logincss{
+   margin-left:5px;
+   margin-top:10px;   
+   
+}
+
+#senhacss{
+	margin-top:10px;
+	
+}
+
+#entrarcss{
+   margin-left:170px;
+   margin-top:76px;
+   top:0;
+   left:0;
+   position:absolute;
+
+  
+}
+
+#esquecicss{
+   margin-top:10px;
+   
+  
+}
+
+/* */
+
 #verificarcod{
-   width:180px;
+   position:absolute;
+   width:192px;
    margin-left:770px;
    margin-top: 30px; 
 }
@@ -105,6 +254,9 @@ margin-bottom: 15px;
 #rodape { 
   clear:both;
   text-align: center;
+  background-color:black;
+  color:white;
+  border:inset;
 }
 
 #rodape a {
@@ -116,7 +268,6 @@ margin-bottom: 15px;
 
 table, th, td{
 	border: 1px solid black;
-	margin-left:120px;
 	margin-top:30px;
 	text-align:center;
 	background-color:white;
@@ -126,6 +277,18 @@ table, th, td{
 th{
 	background-color:black;
 	color:#FFFFFF;
+}
+
+#tabelagestor{
+	margin-left:120px;
+}
+
+#tabeladuvida{
+	margin-left:120px;
+}
+
+#tabelaresultado{
+	margin-left:120px;
 }
 
 /* Alinhamento do formulario contato via css */
@@ -151,8 +314,8 @@ th{
 }
 
 #botaum{
-  margin-top:100px;
-  margin-left:430px;
+  margin-top:90px;
+  margin-left:417px;
 }
 
 
@@ -166,55 +329,98 @@ th{
 
 #nome_p{
    margin-left:177px;
+   
 }
 
 #rg_p{
    margin-left:191px;
+  
 }
 
 #cpf_p{
    margin-left:185px;
+   
 }
 
 #data_p{
    margin-left:100px;
+ 
 }
 
 #rua_p{
    margin-left:188px;
+  
 }
 
 #numero_p{
-   margin-left:167px;	
+   margin-left:167px;
+  
 }
 
 #bairro_p{
    margin-left:178px;
+
 }
 
 #cep_p{
 	margin-left:184px;
+	
 }
 
 #telefone_p{
 	margin-left:163px;
+	
 }
 
 #email_p{
 	margin-left:180px;
+	
 }
 
 #convenio_p{
 	margin-left:161px;
+	
+	
 }
 
 #botaum2{
-   margin-left:298px;
+   margin-left:320px;
+   
 }
 
 #botaogera{
-    margin-left:250px;
- 
+    margin-left:400px;
+    position:absolute;
+}
+
+#botaoindex{
+	margin-top:10px;
+}
+
+/* Alinhamento do formulario Cadastro de gestores via css */
+
+#nome_g{
+   margin-left:92px;
+}
+
+#telefone_g{
+   margin-left:79px;
+}
+
+#email_g{
+   margin-left:92px;
+}
+
+#senha_g{    
+	margin-left:89px;
+}
+
+#csenha_g{
+	margin-left:30px;
+}
+
+#botaum_g{
+	margin-left:233px;
 }
 
 /* Alinhamento do formulario lista de exames via css */
@@ -241,10 +447,21 @@ th{
 
 /* css da tabela de exames */
 .conteudoExames { width:725px!important; margin:0 0 0 150px!important; float:left!important; }
-	ul.lista-exames { width:722px; clear:both; margin:0; padding:0; overflow:auto; height:400px; }
+	ul.lista-exames { width:700px; clear:both; margin:0; padding:0; overflow:auto; height:400px; }
 	ul.lista-exames li { list-style:none; margin:0 0 6px 0; padding:5px; width:100%; float:left; background:#FFF; }
 	ul.lista-exames li:nth-child(even) {background: #ECECEC}
 	ul.lista-exames li:nth-child(odd) {background: #FFF}
+	
+#deletarexame {
+	margin-right:20px;
+	float:right;
+}
+
+#editarexame {
+	padding-right:20px;
+	float:right;
+}
+
 
 /* campo obrigatorio */
 

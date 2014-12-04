@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.List" %>
-<%@ page import="site.vo.Paciente" %>
+<%@ page import="site.vo.Exame" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,48 +19,30 @@
 	<%@include file="paginasjsp/menu.jsp" %>
 	<jsp:include page="mensagem.jsp"/>
 	
-<c:if test="${empty loginUsuario}">
-
-<jsp:forward page="contato.jsp"/>  
-
-</c:if>
 <div id="pagina">
 <div id="conteudo">
-
+<h1>Resultado exames</h1>
 <c:choose>
-  <c:when test="${empty duvidas}">
-    <p>Nenhuma Duvida registrada!</p>
+  <c:when test="${empty resultado}">
+    <p>Você não possui nenhum resultado cadastrado!</p>
   </c:when>
   <c:otherwise>
-  <table id="tabeladuvida" border="1">
+  <table id="tabelaresultado" border="1">
     <tr>    
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Mensagem</th>
-      <th>Status</th>     
-      <th colspan="2">Opções</th>
+      <th>Exame</th>
+      <th>Status</th>
     </tr>
     
-    <c:forEach var="duvida" items="${duvidas}">    
+    <c:forEach var="resultado" items="${resultado}">    
   
-    <tr>
-
-      <td>      
-        ${duvida.nome}
+  	  <tr>
+  		<td >
+        <a href="ResultadoServlet?resultado=${resultado.id}">${resultado.examelab.exame_nome}</a>
       </td>
-          <td>
-    	${duvida.email}
-    </td>
-     <td>      
-        ${duvida.mensagem}
+       <td>
+    	${resultado.status.status_nome}
       </td>
-      <td style= "color: red">
-         ${duvida.status}
-       	</td>
-      <td>       
-      	<a href="mailto:${duvida.email}">Responder</a>
-      </td>
-    </tr>
+      </tr>
     
     </c:forEach>
     
@@ -68,6 +50,7 @@
 
   </c:otherwise>
  </c:choose>
+
 
 </div>
 </div>

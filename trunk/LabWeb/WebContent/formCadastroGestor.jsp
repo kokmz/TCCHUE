@@ -19,13 +19,14 @@
 
  <c:if test="${loginUsuario.perfil.gestor || loginUsuario.perfil.admin}" >  
  <p>
-		<a href="ListaPacienteServlet">Visualizar Pacientes</a>
+		<a href="ListaPacienteServlet"><img src="images/botaovisualiza.png"></img></a>
 </p>
 	<form id="paciente" action="PacienteServlet" method="post">
 					
 			<c:if test="${not empty paciente}">
 			<input type="hidden" name="idPaciente" value="${paciente.id}"/>
 			</c:if>
+			<input id="botaogera" type="button" value="Gerar Código" onclick="GerarCodigo()">
 			<p><label id="cod_p" for="cod_verif">Código de Verificação:</label><input id="cod_verif" type="text" name="cod_verif" value="${empty paciente ? param.cod_verif : paciente.cod_verif }"/></p>
 			
 			<p><label id="nome_p" for="nome">Nome:</label><input id="nome" type="text"	name="nome_paciente" value="${empty paciente ? param.nome_paciente : paciente.nome_paciente}"/></p>
@@ -43,7 +44,7 @@
 			<input type="submit" value="Enviar" id="botaum2" />
 	</form>
 
-		<input id="botaogera" type="button" value="Gerar Código" onclick="GerarCodigo()">
+		
 	
 </c:if>
 </div>

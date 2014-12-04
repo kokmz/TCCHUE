@@ -11,7 +11,7 @@
    			<li><a href='exames_laboratoriais.jsp'><span>Exames</span></a></li>
    			<li><a href='ListaPacienteServlet'><span>Pacientes</span></a></li>
 			<li><a href='ListaDuvidaServlet'><span>Dúvidas</span></a></li>
-			<li><a href='ExameServlet'><span></span>Cadastro Exame</a></li>
+			<li><a href='ExameServlet'><span></span>Resultado Exames</a></li>
 			<li class='last'><a href="LogoutServlet"><span>Sair</span></a></li>
 		</c:if>
 			
@@ -22,7 +22,7 @@
    			<li><a href='ListaGestorServlet'><span>Gestores</span></a></li>
 			<li><a href='ListaPacienteServlet'><span>Pacientes</span></a></li>
 			<li><a href='ListaDuvidaServlet'><span>Dúvidas</span></a></li>
-			<li><a href='ExameServlet'><span></span>Cadastro Exame</a></li>
+			<li><a href='ExameServlet'><span></span>Resultado Exames</a></li>
 			<li class='last'><a href="LogoutServlet"><span>Sair</span></a></li>	
 		</c:if>
 		
