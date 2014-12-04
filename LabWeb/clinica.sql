@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Nov-2014 às 07:44
--- Versão do servidor: 5.5.39
--- PHP Version: 5.4.31
+-- Generation Time: 04-Dez-2014 às 18:44
+-- Versão do servidor: 5.6.20
+-- PHP Version: 5.5.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -34,14 +34,15 @@ CREATE TABLE IF NOT EXISTS `duvidas` (
   `email` varchar(50) NOT NULL,
   `mensagem` varchar(200) NOT NULL,
   `status` varchar(20) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `duvidas`
 --
 
 INSERT INTO `duvidas` (`id_duvida`, `nome`, `email`, `mensagem`, `status`) VALUES
-(1, 'João Zika', 'joao.zik4@hotmail.com', 'minha duvida é como dar o cu de cabeça para baixo,Obrigado', 'Pendente');
+(1, 'João Zika', 'joao.zik4@hotmail.com', 'Há um tempo certo no período de jejum ou tem variação conforme o exame?', 'Pendente'),
+(3, 'Henrique', 'hferes@gmail.com', 'Qual horário costuma ter menos movimento na clinica?', 'Respondido');
 
 -- --------------------------------------------------------
 
@@ -51,10 +52,19 @@ INSERT INTO `duvidas` (`id_duvida`, `nome`, `email`, `mensagem`, `status`) VALUE
 
 CREATE TABLE IF NOT EXISTS `exame` (
 `id_exame` int(11) NOT NULL,
-  `id_exametable` int(11) NOT NULL,
+  `id_tabelaExame` int(11) NOT NULL,
   `id_paciente` int(11) NOT NULL,
-  `descricao` varchar(200) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+  `descricao` varchar(200) NOT NULL,
+  `id_status` int(4) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+
+--
+-- Extraindo dados da tabela `exame`
+--
+
+INSERT INTO `exame` (`id_exame`, `id_tabelaExame`, `id_paciente`, `descricao`, `id_status`) VALUES
+(21, 177, 7, 'Eritrograma | Valores obtidos | Valores de referência \r\n\r\nConcentração de espermatozoides: 40.5milh/ml | > 20milh/ml \r\n\r\nMotilidade progressiva: 30% | > 50% \r\n(A+B) \r\n\r\nNormal Morfologia: 5% | > 15%', 1),
+(22, 208, 8, 'Eritrograma | Valores obtidos | Valores de referência \r\n\r\nHemácias em milhões: 6,12 | 4,5 a 6,0 milh/ml \r\n\r\nHemoglobina: 15,1 | 13 a 16 g/dl\r\n(A+B) \r\n\r\nRDW: 13,6 | 11,5 a 15%', 1);
 
 -- --------------------------------------------------------
 
@@ -76,14 +86,34 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `telefone_paciente` varchar(20) DEFAULT NULL,
   `email_paciente` varchar(20) DEFAULT NULL,
   `convenio_paciente` varchar(20) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Extraindo dados da tabela `paciente`
 --
 
 INSERT INTO `paciente` (`id_paciente`, `cod_verif`, `nome_paciente`, `rg_paciente`, `cpf_paciente`, `datanasc_paciente`, `endereco_rua`, `endereco_num`, `endereco_bairro`, `cep`, `telefone_paciente`, `email_paciente`, `convenio_paciente`) VALUES
-(5, 23123, 'pedro', '126549874', '32165498778', '16/04/1994', 'rua', 123, 'bairro', '13033-154', '1932154785', 'asdsad@cufroxo.com', 'unimed');
+(7, 389802130, 'pedro', '000.000.000-5', '000.000.000.00', '13/02/93', 'nenhuma', 10, 'nenhum', '13033-154', '1932154785', 'pedro@gmail.com', 'unimed'),
+(8, 450432251, 'Amelia', '00.000.000-2', '000.000.000.00', '20/01/95', 'nenhuma', 30, 'nenhum', '123123', '1932123716', 'mfernandes@gmail.com', 'Beneficiência');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `status_exame`
+--
+
+CREATE TABLE IF NOT EXISTS `status_exame` (
+  `id_status` int(4) NOT NULL,
+  `status_nome` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `status_exame`
+--
+
+INSERT INTO `status_exame` (`id_status`, `status_nome`) VALUES
+(1, 'Pronto'),
+(2, 'Pendente');
 
 -- --------------------------------------------------------
 
@@ -95,19 +125,13 @@ CREATE TABLE IF NOT EXISTS `tabela_exame` (
 `id_tabelaExame` int(11) NOT NULL,
   `exame_nome` varchar(100) NOT NULL,
   `procedimento` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=212 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=214 ;
 
 --
 -- Extraindo dados da tabela `tabela_exame`
 --
 
 INSERT INTO `tabela_exame` (`id_tabelaExame`, `exame_nome`, `procedimento`) VALUES
-(1, 'Alfa - HIDROXIPROGESTERONA', 'Coleta de sangue com Jejum: 4 horas'),
-(2, 'Alfa - DIOL - G', 'Coleta de sangue com Jejum de 4 horas.'),
-(3, 'Alfa - ANDROSTENEDIOL-GLUCORONIDEO', 'Coleta de sangue com Jejum de 4 horas.'),
-(4, 'ACTH HORMONIO ADRENOCORTICOTRÓFICO', 'Paciente em jejum 4 horas. Entrar em contato com o laboratório para verificar qual o local mais próximo, pois, a coleta de sangue para este exame não é realizada em todas as unidades.'),
-(5, 'ACIDO 2- TIO-TIAZOLIDINA; TTCA', 'Coleta de urina no Final da jornada de trabalho após um mínimo de 2 dias de exposição. Exame utilizado para avaliar exposição ocupacional a Dissulfeto de Carbono.'),
-(6, 'ACIDO 5 - HIDROXI-INDOLACÉTICO', 'Para este exame o paciente deverá colher urina de 24 horas, seguindo uma DIETA.Deverá retirar, no laboratório o(s) frasco(s) para a coleta de urina de 24 horas e as instruções de coleta.DIETA – Durante 02 dias que antecedem a coleta e durante a coleta (3º dia) não deverá ingerir: café, chá, chocolate, refrigerante, frutas em geral (principalmente abacate, ameixa,banana e abacaxi), sucos, tomate, berinjela, picles, nozes e castanhas. Não ingerir também baunilha e vanilina (e os alimentos que os c'),
 (7, 'ANTICORPOS ANTI-ESCLERODERME; Anti-ScL 70', 'Coleta de sangue com Jejum de 8 horas.'),
 (8, 'ACETONA na URINA', 'Exposição aos seguintes Agentes Químicos: Acetona; Isopropanol. Colher uma amostra de urina antes e outra no final da jornada de trabalho,após,no mínimo dois dias de exposição.'),
 (9, 'ACIDO ASCÓRBICO Vitamina C', 'Coleta de sangue com Jejum 4 horas.Este exame é colhido somente de 2a a 4a feira.'),
@@ -327,7 +351,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `perfil_usuario` tinyint(4) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Extraindo dados da tabela `usuarios`
@@ -335,7 +359,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `nome`, `telefone`, `email`, `password`, `perfil_usuario`) VALUES
 (1, 'gestor', '32234565', 'pic@rage.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2),
-(2, 'administrador', '998767652', 'paciente@email.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1);
+(2, 'administrador', '998767652', 'adm@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1);
 
 --
 -- Indexes for dumped tables
@@ -351,13 +375,19 @@ ALTER TABLE `duvidas`
 -- Indexes for table `exame`
 --
 ALTER TABLE `exame`
- ADD PRIMARY KEY (`id_exame`), ADD KEY `exame_ibfk_1` (`id_paciente`), ADD KEY `id_exametable` (`id_exametable`);
+ ADD PRIMARY KEY (`id_exame`), ADD KEY `exame_ibfk_1` (`id_paciente`), ADD KEY `id_tabelaExame` (`id_tabelaExame`), ADD KEY `id_status` (`id_status`);
 
 --
 -- Indexes for table `paciente`
 --
 ALTER TABLE `paciente`
  ADD PRIMARY KEY (`id_paciente`);
+
+--
+-- Indexes for table `status_exame`
+--
+ALTER TABLE `status_exame`
+ ADD PRIMARY KEY (`id_status`);
 
 --
 -- Indexes for table `tabela_exame`
@@ -379,27 +409,27 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `duvidas`
 --
 ALTER TABLE `duvidas`
-MODIFY `id_duvida` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id_duvida` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `exame`
 --
 ALTER TABLE `exame`
-MODIFY `id_exame` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id_exame` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `paciente`
 --
 ALTER TABLE `paciente`
-MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `tabela_exame`
 --
 ALTER TABLE `tabela_exame`
-MODIFY `id_tabelaExame` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=212;
+MODIFY `id_tabelaExame` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=214;
 --
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
@@ -408,8 +438,9 @@ MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- Limitadores para a tabela `exame`
 --
 ALTER TABLE `exame`
-ADD CONSTRAINT `exame_ibfk_2` FOREIGN KEY (`id_exametable`) REFERENCES `tabela_exame` (`id_tabelaExame`),
-ADD CONSTRAINT `exame_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id_paciente`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `exame_ibfk_1` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id_paciente`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `exame_ibfk_2` FOREIGN KEY (`id_tabelaExame`) REFERENCES `tabela_exame` (`id_tabelaExame`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `exame_ibfk_3` FOREIGN KEY (`id_status`) REFERENCES `status_exame` (`id_status`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

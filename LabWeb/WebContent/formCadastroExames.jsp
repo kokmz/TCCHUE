@@ -6,8 +6,12 @@
 
 <div id="pagina">
 <div id="conteudo">
- <h1>Cadastro de Exame para acompanhamento</h1>
-	<form id = "resultExame" action="cadResultadoExameServlet" method="post">	
+ <h1>Cadastro de Resultado de exames</h1>
+	<form id = "resultExame" action="cadResultadoExameServlet" method="post">
+	
+		<c:if test="${not empty exame}" >
+			<input type="hidden" name="id_exame" value="${exame.id_exame}"/>
+			</c:if>
 	
 		<label id="cboPaciente" for="paciente">Paciente: </label>
 		<select name="paciente">
@@ -30,10 +34,11 @@
 		<textarea id=descricao name="descricao" rows="10" cols="75" />${empty resultExame ? param.descricao : resultExame.descricao}</textarea>
 
 			
-		<p><label for="status">Status: </label>
+		<p><label for="cboStatus" for="status">Status: </label>
 		<select name="status">
-				<option value="Pendente">Pendente</option>
-				<option value="Pronto">Pronto</option>
+			<c:forEach var="status_exame" items="${status}">
+				<option value="${status_exame.id_status}">${status_exame.status_nome}</option>
+			</c:forEach>
 		</select>
 						<br/><br/>
 		

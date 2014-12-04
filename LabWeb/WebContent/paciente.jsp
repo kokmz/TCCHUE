@@ -27,7 +27,7 @@
 <div id="pagina">
 <div id="conteudo">
   <p>
-    <a href="gestor1.jsp">Adicionar Novo Paciente</a> 
+    <a href="gestor1.jsp"><img src="images/botaopaciente.png"></img></a> 
   </p>
 
 <c:choose>
@@ -93,10 +93,10 @@
 			${paciente.convenio_paciente}
 		</td>		
       <td>
-      	<a href="ObterPacienteServlet?paciente=${paciente.id}">Editar</a>
+      	<a href="ObterPacienteServlet?paciente=${paciente.id}"><img src="images/botaoeditar.png"></img></a>
       </td>
       <td>      	
-      	<a href="DeletarPacienteServlet?paciente=${paciente.id}">Remover</a>
+      	<a href="DeletarPacienteServlet?paciente=${paciente.id}"><img src="images/botaodeletar.png"></img></a>
       </td>
     </tr>
     

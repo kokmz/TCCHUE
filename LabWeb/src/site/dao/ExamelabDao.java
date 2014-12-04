@@ -7,9 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import site.vo.Exame;
 import site.vo.Examelab;
-import site.vo.Paciente;
 
 public class ExamelabDao extends Dao {
 	

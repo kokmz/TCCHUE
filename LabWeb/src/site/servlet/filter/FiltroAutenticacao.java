@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  * Servlet Filter implementation class FiltroAutenticacao
  */
 @WebFilter(dispatcherTypes = {DispatcherType.REQUEST }
-					, urlPatterns = { "/*" })
+					, urlPatterns = { "/" })
 public class FiltroAutenticacao implements Filter {
 
     /**

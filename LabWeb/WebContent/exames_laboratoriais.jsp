@@ -22,12 +22,12 @@
 <div id="pagina">
 <div id="conteudo">
 <h1>Exames Laboratoriais</h1>
-<p>Para consultar o Manual de Procedimentos de Coleta de exame basta você localizar o seu exame clicando em uma das letras<br/> abaixo caso queira consultá-lo por ordem alfabética.</p>
-<div id="conteudo" class="conteudoExames">
+<p id="textotabela">Para consultar o Manual de Procedimentos de Coleta de exame basta você localizar o seu exame clicando em uma das letras<br/> abaixo caso queira consultá-lo por ordem alfabética.</p>
+<div id="conteudoexames" class="conteudoExames">
 
  <c:if test="${loginUsuario.perfil.gestor || loginUsuario.perfil.admin}">  
   <p>
-    <a href="montaExamelab.jsp">Adicionar Novo Exame</a> 
+    <a href="montaExamelab.jsp"><img src="images/botaonovo.png"></img></a> 
   </p>
   </c:if>
 
@@ -75,8 +75,8 @@
     <li>      
       <a href="ExameInternaServlet?exame=${exame.id_tabelaExame}">${exame.exame_nome}</a>
       <c:if test="${loginUsuario.perfil.gestor || loginUsuario.perfil.admin}"> 
-      <a href="ObterExamelabServlet?exame=${exame.id_tabelaExame}">Editar</a>
-      <a href="DeletarExamelabServlet?exame=${exame.id_tabelaExame}">Deletar</a>
+      <a href="DeletarExamelabServlet?exame=${exame.id_tabelaExame}" id="deletarexame"><img src="images/botaodeletar.png"></img></a>
+      <a href="ObterExamelabServlet?exame=${exame.id_tabelaExame}" id="editarexame"><img src="images/botaoeditar.png"></img></a>      
       </c:if>
     </li>
     

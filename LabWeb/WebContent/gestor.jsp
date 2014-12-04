@@ -26,7 +26,7 @@
 <div id="pagina">
 <div id="conteudo">
   <p>
-    <a href="montaGestor.jsp">Adicionar Novo Gestor</a> 
+    <a href="montaGestor.jsp"><img src="images/botaogestor.png"></img></a> 
   </p>
 
 <c:choose>
@@ -34,19 +34,18 @@
     <p>Nenhum Gestor cadastrado!</p>
   </c:when>
   <c:otherwise>
-  <table border="1">
+  <table id="tabelagestor" border="1">
     <tr>    
       <th>Nome/Login</th>
       <th>Telefone</th>
       <th>Email</th>
-      <th>Senha</th>      
+  
       <th colspan="2">Ações</th>
     </tr>
     
     <c:forEach var="gestor" items="${usuarios}">    
   
     <tr>
-
       <td>      
         ${gestor.nome}
       </td>
@@ -57,13 +56,10 @@
         ${gestor.email}
       </td>
       <td>
-      	${gestor.password}
-      </td>
-      <td>
-      	<a href="ObterGestorServlet?gestor=${gestor.id_usuario}">Editar</a>
+      	<a href="ObterGestorServlet?gestor=${gestor.id_usuario}"><img src="images/botaoeditar.png"></img></a>
       	</td>
       	<td>    	
-      	<a href="DeletarGestorServlet?gestor=${gestor.id_usuario}">Remover</a>
+      	<a href="DeletarGestorServlet?gestor=${gestor.id_usuario}"><img src="images/botaodeletar.png"></img></a>
       </td>
     </tr>
     
