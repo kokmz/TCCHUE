@@ -1,0 +1,5 @@
+9 areas de conhecimento do pmbok
+
+escopo do produto = funcionalidades que vamos implementar esse semestre
+
+escopo do projeto = nosso trabalho
