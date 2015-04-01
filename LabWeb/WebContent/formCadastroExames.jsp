@@ -40,6 +40,10 @@
 				<option value="${status_exame.id_status}">${status_exame.status_nome}</option>
 			</c:forEach>
 		</select>
+		
+		<p><label id="data" for="data">Data do Exame:</label>
+		<input id="data" type="date" name="data" value="${empty resultExame ? param.data : resultExame.data }"/></p>
+			
 						<br/><br/>
 		
 			<input type="submit" value="Enviar" />

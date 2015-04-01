@@ -1,10 +1,12 @@
 package site.vo;
 
+
 public class Exame {
 	private int id, id_paciente, id_tabelaExame, id_status;
 	private String descricao;
 	private Status status;
 	private Examelab examelab;
+	private String data_exame;
 	
 	public int getId() {
 		return id;
@@ -39,6 +41,7 @@ public class Exame {
 	public Status getStatus() {
 		return status;
 	}
+
 	public void setStatus(Status status) {
 		this.status = status;
 	}
@@ -48,5 +51,12 @@ public class Exame {
 	public void setId_tabelaExame(int id_tabelaExame) {
 		this.id_tabelaExame = id_tabelaExame;
 	}	
+	
+	public String getData_exame() {
+		return data_exame;
+	}
+	public void setData_exame(String data_exame) {
+		this.data_exame = data_exame;
+	}
 
 }

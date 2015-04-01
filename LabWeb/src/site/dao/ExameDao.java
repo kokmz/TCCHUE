@@ -20,7 +20,9 @@ public class ExameDao extends Dao {
 		
 		try{			
 		conn = getConnection();
-		String sql = "SELECT exame.id_exame, exame.id_tabelaExame, exame.id_paciente, exame.descricao, exame.id_status, tabela_exame.exame_nome FROM exame, tabela_exame WHERE exame.id_tabelaExame = tabela_exame.id_tabelaExame AND id_exame=?";
+		String sql = "SELECT exame.id_exame, exame.id_tabelaExame, exame.id_paciente, exame.descricao, exame.id_status, exame.data_exame, tabela_exame.exame_nome"
+				+ "   FROM exame, tabela_exame WHERE exame.id_tabelaExame = tabela_exame.id_tabelaExame "
+				+ "   AND id_exame=?";
 		
 		PreparedStatement stmt = conn.prepareStatement(sql);
 		stmt.setInt(1, idExame);
@@ -34,6 +36,7 @@ public class ExameDao extends Dao {
 			exame.setId_tabelaExame(result.getInt("id_tabelaExame"));
 			exame.setId_paciente(result.getInt("id_paciente"));
 			exame.setDescricao(result.getString("descricao").replaceAll("\n", "<br/>"));
+			exame.setData_exame(result.getString("data_exame"));
 			exame.setId_status(result.getInt("id_status"));
 			
 			Examelab nomeExame = new Examelab();
@@ -78,7 +81,7 @@ public List<Exame> getResultado(int cod_verif)
 		{
 			conn = getConnection();
 						
-			String sql = "SELECT exame.id_exame, exame.id_paciente, exame.id_tabelaExame, tabela_exame.exame_nome, status_exame.status_nome FROM paciente, tabela_exame, status_exame, exame WHERE exame.id_paciente = paciente.id_paciente AND exame.id_tabelaExame = tabela_exame.id_tabelaExame AND exame.id_status = status_exame.id_status AND paciente.cod_verif ="+cod_verif;
+			String sql = "SELECT exame.id_exame, exame.id_paciente, exame.id_tabelaExame, tabela_exame.exame_nome, status_exame.status_nome, exame.data_exame FROM paciente, tabela_exame, status_exame, exame WHERE exame.id_paciente = paciente.id_paciente AND exame.id_tabelaExame = tabela_exame.id_tabelaExame AND exame.id_status = status_exame.id_status AND paciente.cod_verif ="+cod_verif;
 
 			PreparedStatement stmt = conn.prepareStatement(sql);      
 			ResultSet result = stmt.executeQuery();
@@ -89,10 +92,12 @@ public List<Exame> getResultado(int cod_verif)
 				resultadoExame.setId(result.getInt("id_exame"));
 				resultadoExame.setId_paciente(result.getInt("id_paciente"));
 				resultadoExame.setId_tabelaExame(result.getInt("id_tabelaExame"));
+				resultadoExame.setData_exame(result.getString("data_exame"));
 				
 				Examelab nomeExame = new Examelab();
 				nomeExame.setExame_nome(result.getString("exame_nome"));
 				resultadoExame.setExamelab(nomeExame);
+				
 				
 				Status stats = new Status();
 				stats.setStatus_nome(result.getString("status_nome"));
@@ -181,7 +186,7 @@ public boolean insertExame(Exame exame)
 		conn.setAutoCommit(false);
 
 		//define SQL para inserção
-		String sql = "insert into exame (id_paciente, id_tabelaExame, descricao, id_status) values (?, ?, ?, ?);";
+		String sql = "insert into exame (id_paciente, id_tabelaExame, descricao, id_status, data_exame) values (?, ?, ?, ?, ?);";
 			      
 
 		//instance Prepared statement especificando os parâmetros do SQL
@@ -190,6 +195,7 @@ public boolean insertExame(Exame exame)
 		stmt.setInt(2, exame.getId_tabelaExame());		
 		stmt.setString(3, exame.getDescricao());
 		stmt.setInt(4, exame.getId_status());
+		stmt.setString(5, exame.getData_exame());
 
 		//executa a operação no banco de dados
 		int affectedRows = stmt.executeUpdate();
@@ -248,7 +254,7 @@ public boolean updateExame(Exame exame)
 		conn.setAutoCommit(false);
 
 		//define SQL para atualização
-		String sql = "UPDATE exame SET id_tabelaExame=?, id_paciente=?, descricao=?, id_status=? WHERE id_exame=?";        
+		String sql = "UPDATE exame SET id_tabelaExame=?, id_paciente=?, descricao=?, id_status=?, data_exame=? WHERE id_exame=?";        
 
 		//instance Prepared statement especificando os parâmetros do SQL
 		PreparedStatement stmt = conn.prepareStatement(sql);
@@ -256,7 +262,8 @@ public boolean updateExame(Exame exame)
 		stmt.setInt(2, exame.getId_paciente());
 		stmt.setString(3, exame.getDescricao());
 		stmt.setInt(4, exame.getId_status());
-		stmt.setInt(5, exame.getId());
+		stmt.setString(5, exame.getData_exame());
+		stmt.setInt(6, exame.getId());
 
 		//executa a operação no banco de dados
 		int affectedRows = stmt.executeUpdate();

@@ -29,12 +29,13 @@ public class cadResultadoExameServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		try {    
-			System.out.println("teste123");
 			String idExame = request.getParameter("idExame");
 			int paciente = Integer.parseInt(request.getParameter("paciente"));
 			int tabelaExame = Integer.parseInt(request.getParameter("exame"));
 			String descricao = request.getParameter("descricao");
 			int status = Integer.parseInt(request.getParameter("status"));
+			String data = request.getParameter("data");
+			
 			
 			
 			if (paciente != 0 && tabelaExame != 0 && status != 0 ){
@@ -51,6 +52,7 @@ public class cadResultadoExameServlet extends HttpServlet {
 					novoExame.setId_tabelaExame(tabelaExame);
 					novoExame.setDescricao(descricao);
 					novoExame.setId_status(status);
+					novoExame.setData_exame(data);
 														
 					if (idExame != null)
 					{
