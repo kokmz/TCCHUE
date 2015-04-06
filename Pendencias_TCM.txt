@@ -1,0 +1,11 @@
+-Arrumar banco de dados com endereço correto conforme solicitado pelo anselmo(requer correções nos codigos)
+
+-Arrumar a função de esqueci minha senha
+
+-Arrumar problemas de permissões de login
+
+-Arrumar tela de pacientes(Feio pa caralho)
+
+-Tentar arrumar a formatação da data no relatório de fluxo de exames
+
+-Trocar a função de SAIR para a caixinha de bem vindo
