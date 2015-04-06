@@ -36,10 +36,8 @@ public class cadResultadoExameServlet extends HttpServlet {
 			int status = Integer.parseInt(request.getParameter("status"));
 			String data = request.getParameter("data");
 			
-			
-			
-			if (paciente != 0 && tabelaExame != 0 && status != 0 ){
-				if (paciente == 0 && tabelaExame == 0)
+
+				if (paciente == 0 || tabelaExame == 0 )
 				{
 					request.setAttribute("mensagemErro", "Campos vazios");
 					getServletContext().getRequestDispatcher("/montaGestor.jsp").forward(request, response);          
@@ -86,11 +84,7 @@ public class cadResultadoExameServlet extends HttpServlet {
 						getServletContext().getRequestDispatcher("/ExameServlet").forward(request, response);
 					}
 				}			
-		}
-			else {
-				request.setAttribute("mensagemErro", "Informações do paciente estão inválida.");
-				getServletContext().getRequestDispatcher("/ExameServlet").forward(request, response);	    	
-			}
+		
 		}
 		catch (Exception e) {
 			request.setAttribute("mensagemErro", "Informações do Paciente estão inválidas.");

@@ -10,7 +10,7 @@
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
 <script type='text/javascript' src="menu_jquery.js"></script>
 <link rel="stylesheet" type="text/css" href="estilos.css"/>
-<title>Hue - Laboratorio Medicinal</title>
+<title>Clinica Lab - Laboratorio Medicinal</title>
 </head>
 <body>
 	<%@include file="inicio.jsp" %>

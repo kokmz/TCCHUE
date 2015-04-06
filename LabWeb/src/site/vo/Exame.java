@@ -2,11 +2,11 @@ package site.vo;
 
 
 public class Exame {
-	private int id, id_paciente, id_tabelaExame, id_status;
-	private String descricao;
-	private Status status;
-	private Examelab examelab;
-	private String data_exame;
+	int id, id_paciente, id_tabelaExame, id_status;
+	String descricao;
+	Status status;
+	Examelab examelab;
+	String data_exame;
 	
 	public int getId() {
 		return id;

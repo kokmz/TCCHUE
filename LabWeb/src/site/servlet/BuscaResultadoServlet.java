@@ -32,7 +32,7 @@ public class BuscaResultadoServlet extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//tenta obter lista de alunos da aplicação
+		//tenta obter lista de exames da aplicação
 		
 		Integer cod_verif = Integer.parseInt(request.getParameter("cod_verif"));
 		

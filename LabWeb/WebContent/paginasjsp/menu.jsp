@@ -12,6 +12,7 @@
    			<li><a href='ListaPacienteServlet'><span>Pacientes</span></a></li>
 			<li><a href='ListaDuvidaServlet'><span>Dúvidas</span></a></li>
 			<li><a href='ExameServlet'><span></span>Resultado Exames</a></li>
+			<li><a href='fluxoExames.jsp'><span></span>Relatório</a></li>
 			<li class='last'><a href="LogoutServlet"><span>Sair</span></a></li>
 		</c:if>
 			
@@ -23,6 +24,7 @@
 			<li><a href='ListaPacienteServlet'><span>Pacientes</span></a></li>
 			<li><a href='ListaDuvidaServlet'><span>Dúvidas</span></a></li>
 			<li><a href='ExameServlet'><span></span>Resultado Exames</a></li>
+			<li><a href='fluxoExames.jsp'><span></span>Relatório</a></li>
 			<li class='last'><a href="LogoutServlet"><span>Sair</span></a></li>	
 		</c:if>
 		
