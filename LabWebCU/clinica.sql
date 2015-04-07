@@ -101,8 +101,8 @@ CREATE TABLE IF NOT EXISTS `paciente` (
 --
 
 INSERT INTO `paciente` (`id_paciente`, `cod_verif`, `nome_paciente`, `rg_paciente`, `cpf_paciente`, `datanasc_paciente`, `endereco_rua`, `endereco_num`, `endereco_bairro`, `cep`, `telefone_paciente`, `email_paciente`, `convenio_paciente`) VALUES
-(7, 389802130, 'pedro', '000.000.000-5', '000.000.000.00', '13/02/93', 'nenhuma', 10, 'nenhum', '13033-154', '1932154785', 'pedro@gmail.com', 'unimed'),
-(8, 450432251, 'Amelia', '00.000.000-2', '000.000.000.00', '20/01/95', 'nenhuma', 30, 'nenhum', '123123', '1932123716', 'mfernandes@gmail.com', 'Beneficiência');
+(7, 389802130, 'Pedro Gimenes', '54.548.987-5', '399.989.348.69', '13/02/93', 'Rua Teste', 10, 'Bairro dos HUE', '13033-154', '1932154785', 'pedro@gmail.com', 'unimed'),
+(8, 450432251, 'Amelia', '23.020.923-2', '223.320.020.55', '20/01/95', 'Rua Raise', 30, 'Bairro MOranga', '13033-588', '1932123716', 'mfernandes@gmail.com', 'Beneficiência');
 
 -- --------------------------------------------------------
 
