@@ -5,7 +5,6 @@
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
-  <script type="text/javascript" src="jquery.coolinput.min.js"></script>
 <style>
   .custom-combobox {
     position: relative;
@@ -21,8 +20,15 @@
   .custom-combobox-input {
     margin: 0;
     padding: 5px 10px;
-	width: 640px;
+	width: 410px;
   }
+  .ui-autocomplete {
+    max-height: 200px;
+    width: 410px;
+    overflow-y: auto;   /* prevent horizontal scrollbar */
+    overflow-x: hidden; /* add padding to account for vertical scrollbar */
+    z-index:6000 !important;
+}
   </style>
   <script>
   (function( $ ) {
@@ -45,7 +51,7 @@
           .appendTo( this.wrapper )
           .val( value )
           .attr( "title", "" )
-          .attr("placeholder", "Selecione ou Digite um exame...")
+          .attr("placeholder", "Selecione...")
           .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
           .autocomplete({
             delay: 0,
@@ -158,16 +164,15 @@
  
   $(function() {
     $( "#combobox" ).combobox();
+    $( "#combobox2" ).combobox();
+    $( "#toggle" ).click(function() {
+        $( "#combobox2" ).toggle();
+      });
     $( "#toggle" ).click(function() {
       $( "#combobox" ).toggle();
     });
   });
   </script>
-<script type="text/javascript">
-$(function(){
-   $('#hint *').coolinput();
-});
-</script>
 
 <div id="pagina">
 <div id="conteudo">
@@ -177,19 +182,23 @@ $(function(){
 		<c:if test="${not empty exame}" >
 			<input type="hidden" name="id_exame" value="${exame.id_exame}"/>
 			</c:if>
-	
+			
+		
+		<div class="ui-widget">
 		<label id="cboPaciente" for="paciente">Paciente: </label>
-		<select name="paciente">
+		<select id="combobox" name="paciente">
+			<option value=""></option>
   			<c:forEach var="paciente" items="${pacientes}">
   				<option value="${paciente.id}">${paciente.nome_paciente}</option> 
   			</c:forEach>    
 		</select>
+		</div>
 		
-		<div id="hint" class="ui-widget">
+		<div class="ui-widget">
 		<p><label id="cboExame" for="exame">Exame: </label>
-		<select id="combobox" name="exame" >
+		<select id="combobox2" name="exame" >
 		<option value=""></option>
-  			<c:forEach var="exame" items="${exames}"> 
+  			<c:forEach  var="exame" items="${exames}"> 
   				<option value="${exame.id_tabelaExame}">${exame.exame_nome}</option> 
   			</c:forEach>    
 		</select>
