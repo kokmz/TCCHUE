@@ -5,6 +5,7 @@
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
+  <script type="text/javascript" src="jquery.coolinput.min.js"></script>
 <style>
   .custom-combobox {
     position: relative;
@@ -40,10 +41,11 @@
         var selected = this.element.children( ":selected" ),
           value = selected.val() ? selected.text() : "";
  
-        this.input = $( "<input>" )
+        this.input = $( "<input>")
           .appendTo( this.wrapper )
           .val( value )
           .attr( "title", "" )
+          .attr("placeholder", "Selecione ou Digite um exame...")
           .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left" )
           .autocomplete({
             delay: 0,
@@ -72,7 +74,7 @@
  
         $( "<a>" )
           .attr( "tabIndex", -1 )
-          .attr( "title", "Expandir" )
+          .attr( "title", "Selecionar" )
           .tooltip()
           .appendTo( this.wrapper )
           .button({
@@ -161,7 +163,11 @@
     });
   });
   </script>
-
+<script type="text/javascript">
+$(function(){
+   $('#hint *').coolinput();
+});
+</script>
 
 <div id="pagina">
 <div id="conteudo">
@@ -179,12 +185,11 @@
   			</c:forEach>    
 		</select>
 		
-		<div class="ui-widget">
+		<div id="hint" class="ui-widget">
 		<p><label id="cboExame" for="exame">Exame: </label>
-		<select id="combobox" name="exame">
-			<option value="Selecione um exame">Selecione um exame...</option>
+		<select id="combobox" name="exame" >
+		<option value=""></option>
   			<c:forEach var="exame" items="${exames}"> 
-
   				<option value="${exame.id_tabelaExame}">${exame.exame_nome}</option> 
   			</c:forEach>    
 		</select>
