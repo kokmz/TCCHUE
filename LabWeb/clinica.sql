@@ -66,11 +66,11 @@ CREATE TABLE IF NOT EXISTS `exame` (
 --
 
 INSERT INTO `exame` (`id_exame`, `id_tabelaExame`, `id_paciente`, `descricao`, `id_status`, `Data_exame`) VALUES
-(21, 177, 7, 'Eritrograma | Valores obtidos | Valores de referência \r\n\r\nConcentração de espermatozoides: 40.5milh/ml | > 20milh/ml \r\n\r\nMotilidade progressiva: 30% | > 50% \r\n(A+B) \r\n\r\nNormal Morfologia: 5% | > 15%', 1, '0000-00-00'),
-(22, 208, 8, 'Eritrograma | Valores obtidos | Valores de referência \r\n\r\nHemácias em milhões: 6,12 | 4,5 a 6,0 milh/ml \r\n\r\nHemoglobina: 15,1 | 13 a 16 g/dl\r\n(A+B) \r\n\r\nRDW: 13,6 | 11,5 a 15%', 1, '0000-00-00'),
+(21, 177, 7, 'Eritrograma | Valores obtidos | Valores de referência \r\n\r\nConcentração de espermatozoides: 40.5milh/ml | > 20milh/ml \r\n\r\nMotilidade progressiva: 30% | > 50% \r\n(A+B) \r\n\r\nNormal Morfologia: 5% | > 15%', 1, '2012-01-01'),
+(22, 208, 8, 'Eritrograma | Valores obtidos | Valores de referência \r\n\r\nHemácias em milhões: 6,12 | 4,5 a 6,0 milh/ml \r\n\r\nHemoglobina: 15,1 | 13 a 16 g/dl\r\n(A+B) \r\n\r\nRDW: 13,6 | 11,5 a 15%', 1, '2012-01-01'),
 (23, 7, 7, 'fshdgdf', 1, '2015-04-01'),
 (24, 10, 7, 'fshdgdf', 1, '2015-03-31'),
-(25, 7, 7, 'sadadasdasdfvsdfgs', 1, '2015-03-16'),
+(25, 7, 7, 'sadadasdasdfvsdfgs', 2, '2015-03-16'),
 (26, 197, 7, 'UHAOIDSUHFSIDFUHAISDPASKDFOER', 1, '2015-04-08');
 
 -- --------------------------------------------------------
@@ -369,8 +369,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nome`, `telefone`, `email`, `password`, `perfil_usuario`) VALUES
-(1, 'gestor', '32234565', 'pic@rage.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 2),
-(2, 'administrador', '998767652', 'adm@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1);
+(1, 'gestor', '32234565', 'pic@rage.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
+(2, 'administrador', '998767652', 'adm@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1);
 
 --
 -- Indexes for dumped tables
