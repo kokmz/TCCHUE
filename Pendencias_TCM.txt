@@ -9,3 +9,9 @@
 -Tentar arrumar a formatação da data no relatório de fluxo de exames
 
 -Trocar a função de SAIR para a caixinha de bem vindo
+
+-Criar diagrama de classe de todas as funcionalidades
+
+-Criar diagramas de comunicação das implementações novas
+
+-Verificar tabelas para paginação no site
