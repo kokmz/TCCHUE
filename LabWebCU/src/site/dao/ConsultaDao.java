@@ -3,9 +3,7 @@ package site.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import site.vo.Exame;
@@ -25,7 +23,7 @@ public class ConsultaDao extends Dao{
 		{
 			conn = getConnection();
 
-			String sql = "select te.exame_nome, p.nome_paciente,  e.data_exame, se.status_nome "
+			String sql = "select te.exame_nome, p.nome_paciente, DATE_FORMAT(e.data_exame, '%d/%m/%Y') data_exame, se.status_nome "
 					+ "from exame e, tabela_Exame te, paciente p, status_exame se  "
 					+ "where te.id_tabelaExame = e.id_exame "
 					+ "and p.id_paciente = e.id_paciente "
