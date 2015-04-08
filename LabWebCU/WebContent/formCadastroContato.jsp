@@ -35,8 +35,7 @@
 	</form>
 </div>
 <div id="mapacontato">
-<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3675.4095995176212!2d-47.06138913390034!3d-22.898258332769462!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1428497538816" width="800" height="225" frameborder="0" style="border:0"></iframe>
-<!--  <img src="images/mapacontato.png" alt="Mapa contato"></img> -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.215546124018!2d-47.05248241050848!3d-22.905419268872684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8b741925a85%3A0x7f65542c4ec76958!2sCentro%2C+Campinas+-+SP!5e0!3m2!1spt-BR!2sbr!4v1428498738040" width="800" height="230" frameborder="0" style="border:0"></iframe><!--  <img src="images/mapacontato.png" alt="Mapa contato"></img> -->
 </div>
 </div>
 </div>
