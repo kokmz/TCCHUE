@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+
 <jsp:include page="mensagem.jsp"/>
 <div id="pagina">
 <div id="conteudo">
@@ -34,7 +35,8 @@
 	</form>
 </div>
 <div id="mapacontato">
-<img src="images/mapacontato.png" alt="Mapa contato"></img>
+<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3675.4095995176212!2d-47.06138913390034!3d-22.898258332769462!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1428497538816" width="800" height="225" frameborder="0" style="border:0"></iframe>
+<!--  <img src="images/mapacontato.png" alt="Mapa contato"></img> -->
 </div>
 </div>
 </div>
