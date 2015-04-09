@@ -20,7 +20,7 @@
 <div id="especialidade">
 <h1>Nossa Especialidade</h1>
 <p>A especialidade do Clinica LaB é realizar exames com o máximo conforto para pacientes e médicos</p>
-</div>
+	</div>
 <div id="divisor">
 <img src="images/divisor.png"></img>
 </div>

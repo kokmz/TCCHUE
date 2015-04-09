@@ -38,7 +38,7 @@ public class ListaDuvidaServlet extends HttpServlet {
 
 		//grava a lista de alunos no escopo de requisição para acessar no arquivo alunos.jsp
 		request.setAttribute("duvidas", duvidas);
-		getServletContext().getRequestDispatcher( "/duvida.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/duvida.jsp").forward(request, response);
 	}
 
 }

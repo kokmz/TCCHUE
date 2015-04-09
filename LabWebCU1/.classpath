@@ -16,6 +16,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/pedro.gimenes/Desktop/LabWebCU/WebContent/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/&apos;/Desktop/LabWeb/WebContent/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/&apos;/Desktop/LabWeb/WebContent/WEB-INF/lib/lib/smtp.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -12,6 +12,54 @@ import site.vo.Duvida;
 
 public class DuvidaDao extends Dao {
 	
+	public Duvida getStatus(int idDuvida)
+	{
+	    Connection conn = null;
+	    
+	    try
+	    {
+	      conn = getConnection();
+
+	      String sql = "SELECT status FROM duvidas where id_duvida = ? AND status='Respondido'";        
+
+	      PreparedStatement stmt = conn.prepareStatement(sql);
+	      stmt.setInt(1, idDuvida);
+	      ResultSet result = stmt.executeQuery();
+
+	      if (result.next())
+	      {
+	        Duvida duvida = new Duvida();
+	        duvida.setStatus(result.getString("status"));
+			
+	        return duvida;
+	      }
+	      else
+	      {
+	        return null;
+	      }
+	    }
+	    catch (Exception ex)
+	    {
+	      ex.printStackTrace();
+	      return null;
+	    }
+	    finally
+	    {
+	      if (conn != null)
+	      {
+	        try
+	        {
+	          conn.close();
+	        }
+	        catch(Exception closeEx)
+	        {
+	          //do nothing
+	        }
+	      }
+	    }
+	}
+	
+	
 	public Duvida getDuvida(int idDuvida)
 	{
 	    Connection conn = null;
@@ -115,7 +163,8 @@ public class DuvidaDao extends Dao {
 public boolean insertDuvida(Duvida duvida)
 {
 	Connection conn = null;
-
+	
+	
 	try
 	{
 		//obtem conexao com o banco de dados
@@ -171,8 +220,7 @@ public boolean insertDuvida(Duvida duvida)
 			try
 			{
 				conn.close();
-				SendMail send = new SendMail();
-				send.sendMail("pepsivini@gmail.com", "danilo.missio@hotmail.com", "Teste", "Come meu cu");
+				
 			}
 			catch(Exception closeEx)
 			{
@@ -202,6 +250,64 @@ public boolean updateDuvida(Duvida duvida)
 		stmt.setString(3, duvida.getMensagem());
 		stmt.setString(4, duvida.getStatus());
 		stmt.setInt(5, duvida.getId_duvida());
+
+		//executa a operação no banco de dados
+		int affectedRows = stmt.executeUpdate();
+
+		//verifica se deu certo. Se sim, atualiza a valor 
+		if (affectedRows > 0)
+		{  
+			//confirma as modificações no banco de dados
+				conn.commit();
+				return true;
+			}
+			else
+			{
+				//cancela as modificações no banco de dados
+				conn.rollback();
+				return false;
+			}				
+
+	}
+	catch (Exception ex)
+	{
+		ex.printStackTrace();
+		return false;
+	}
+	finally
+	{
+		if (conn != null)
+		{
+			try
+			{
+				conn.close();
+			}
+			catch(Exception closeEx)
+			{
+				//do nothing
+			}
+		}
+	}    
+}
+
+public boolean updateStatus(int idDuvida)
+{
+	Connection conn = null;
+
+	try
+	{
+		//obtem conexao com o banco de dados
+		conn = getConnection();
+		conn.setAutoCommit(false);
+
+		//define SQL para atualização
+		String sql = "UPDATE duvidas SET status='Respondido' WHERE id_duvida=?";        
+
+		//instance Prepared statement especificando os parâmetros do SQL
+		PreparedStatement stmt = conn.prepareStatement(sql);
+		Duvida duvida = new Duvida();
+		
+		stmt.setInt(1, idDuvida);
 
 		//executa a operação no banco de dados
 		int affectedRows = stmt.executeUpdate();

@@ -17,11 +17,10 @@
 	
 	<%@include file="inicio.jsp" %>
 	<%@include file="paginasjsp/menu.jsp" %>
-	<jsp:include page="mensagem.jsp"/>
 	
 <c:if test="${empty loginUsuario}">
 
-<jsp:forward page="contato.jsp"/>  
+<jsp:forward page="index.jsp"/>  
 
 </c:if>
 <div id="pagina">
@@ -36,7 +35,6 @@
     <tr>    
       <th>Nome</th>
       <th>Email</th>
-      <th>Mensagem</th>
       <th>Status</th>     
       <th colspan="2">Opções</th>
     </tr>
@@ -51,14 +49,19 @@
           <td>
     	${duvida.email}
     </td>
-     <td>      
-        ${duvida.mensagem}
-      </td>
       <td style= "color: red">
          ${duvida.status}
        	</td>
-      <td>       
-      	<a href="mailto:${duvida.email}">Responder</a>
+      <td> 
+        
+         <c:choose>
+         <c:when test="${duvida.status eq Respondido}">   
+         <a>Responder</a>
+         </c:when>
+         <c:otherwise>
+      	 <a href="ResponderDuvidaServlet?duvida=${duvida.id_duvida}">Responder</a>
+      	 </c:otherwise>
+      	 </c:choose>
       </td>
     </tr>
     

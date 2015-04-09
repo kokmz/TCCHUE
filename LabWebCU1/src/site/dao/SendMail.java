@@ -17,7 +17,7 @@ public class SendMail{
      * quando instanciar um Objeto ja sera atribuido o servidor SMTP do GMAIL  
      * e a porta usada por ele 
      */  
-    SendMail() { //Para o GMAIL   
+    public SendMail() { //Para o GMAIL   
         mailSMTPServer = "smtp.gmail.com";  
         mailSMTPServerPort = "465";  
     }  
@@ -46,7 +46,7 @@ public class SendMail{
           
         //Cria um autenticador que sera usado a seguir  
         SimpleAuth auth = null;  
-        auth = new SimpleAuth ("pepsivini@gmail.com","TM1313femp");  
+        auth = new SimpleAuth ("pepsivini@gmail.com","Pedro1994");  
           
         //Session - objeto que ira realizar a conexão com o servidor  
         /*Como há necessidade de autenticação é criada uma autenticacao que 
@@ -66,7 +66,7 @@ public class SendMail{
             //Setando o assunto  
             msg.setSubject(subject);  
             //Setando o conteúdo/corpo do email  
-            msg.setContent(message,"TESTE");  
+            msg.setText(message); 
   
         } catch (Exception e) {  
             System.out.println(">> Erro: Completar Mensagem");  
@@ -82,8 +82,8 @@ public class SendMail{
              *  2 - seu nome de usuario do gmail 
              *  3 - sua senha do gmail 
              */  
-            tr.connect("smtp.gmail.com", "pepsivini@gmail.com", "TM1313femp");  
-            msg.saveChanges(); // don't forget this  
+            tr.connect("smtp.gmail.com", "pepsivini", "Pedro1994");  
+            msg.saveChanges();// don't forget this  
             //envio da mensagem  
             tr.sendMessage(msg, msg.getAllRecipients());  
             tr.close();  
