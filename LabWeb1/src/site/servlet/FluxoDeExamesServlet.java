@@ -49,7 +49,7 @@ public class FluxoDeExamesServlet extends HttpServlet {
 		
 		try {
 			Pdf pdf = new Pdf();
-			pdf.GerarPdf(data_inicio, data_fim);
+			pdf.GerarPdf(fluxo);
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block
