@@ -64,10 +64,12 @@
 					<option value="${estado_endereco.id_estado}">${estado_endereco.sigla_estado}</option>
 				</c:forEach>
 			</select></p>
-			<p><label id="cep_p" for="cep">CEP:</label><input id="cep" type="text" name="cep" value="${empty logradouro ? param.cep : logradouro.cep }"/></p><a href="ObterPacienteServlet?paciente=${paciente.id_logradouro}">Buscar CEP</a>
-			<p><label id="rua_p" for="rua">Rua:</label><input id="rua" type="text" name="endereco" value="${empty logradouro ? param.endereco : logradouro.endereco }"/></p>
+
+			<p><label id="cep_p" for="cep">CEP:</label><input id="cep" type="text" name="cep" value="${empty paciente ? param.logradouro.cep : paciente.logradouro.cep }"/>
+			</p><a href="ObterPacienteServlet?paciente=${paciente.id_logradouro}">Buscar CEP</a>
+			<p><label id="rua_p" for="rua">Rua:</label><input id="rua" type="text" name="endereco" value="${empty paciente ? param.logradouro.endereco : paciente.logradouro.endereco }"/></p>
 			<p><label id="numero_p" for="numero">Número:</label><input id="numero" type="text" name="numero_endereco" value="${empty paciente ? param.numero_endereco : paciente.numero_endereco }"/></p>
-			<p><label id="bairro_p" for="bairro">Bairro:</label><input id="bairro" type="text" name="endereco_bairro" value="${empty logradouro ? param.bairro : logradouro.bairro }"/></p>
+			<p><label id="bairro_p" for="bairro">Bairro:</label><input id="bairro" type="text" name="endereco_bairro" value="${empty paciente ? param.logradouro.bairro : paciente.logradouro.bairro }"/></p>
 
 			<p><label id="telefone_p" for="telefone">Telefone:</label><input id="telefone" type="text" name="telefone_paciente" value="${empty paciente ? param.telefone_paciente : paciente.telefone_paciente }"/></p>
 			<p><label id="email_p" for="email">Email:</label><input id="email" type="text" name="email_paciente" value="${empty paciente ? param.email_paciente : paciente.email_paciente }"/></p>
