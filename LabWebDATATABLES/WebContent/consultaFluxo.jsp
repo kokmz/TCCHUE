@@ -14,9 +14,10 @@
 <script type='text/javascript' src="menu_jquery.js"></script>
 
 
-<link href="//datatables.net/download/build/nightly/jquery.dataTables.css?_=0188ba71c41a05452766c8a4627b767f.css" rel="stylesheet" type="text/css" />
-<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-<script src="//datatables.net/download/build/nightly/jquery.dataTables.js?_=0188ba71c41a05452766c8a4627b767f"></script>
+
+<script src="script/jquery-2.1.0.min.js"></script>
+<script src="script/jquery.dataTables.js"></script>
+<link href="dataTables.css" rel="stylesheet" type="text/css" />
 
 
 <link rel="stylesheet" type="text/css" href="estilos.css" />
@@ -25,7 +26,13 @@
 
 <script>
 $(document).ready( function () {
-    $('#tabelaresultado').DataTable();
+    $('#tabelaresultado').DataTable()( {
+		"pagingType": "full_numbers",
+		"lengthMenu": "Display 10 records"
+		
+			
+				
+	} );
 } );
 
 </script>
@@ -56,29 +63,29 @@ $(document).ready( function () {
 				</c:when>
 				<c:otherwise>
 
-					
+
 					<table id="tabelaresultado" class="display">
-					<thead>
-						<tr>
-							<th>Paciente</th>
-							<th>Exame</th>
-							<th>Data Exame</th>
-							<th>Status</th>
-						</tr>
-						</thead>
-						
-						
-						 <tbody>
-						 <c:forEach var="fluxo" items="${fluxo}">
+						<thead>
 							<tr>
-								<td>${fluxo.paciente.nome_paciente}</td>
-								<td>${fluxo.examelab.exame_nome}</td>
-								<td>${fluxo.exame.data_exame}</td>
-								<td>${fluxo.status.status_nome}</td>
+								<th>Paciente</th>
+								<th>Exame</th>
+								<th>Data Exame</th>
+								<th>Status</th>
 							</tr>
+						</thead>
+
+
+						<tbody>
+							<c:forEach var="fluxo" items="${fluxo}">
+								<tr>
+									<td>${fluxo.paciente.nome_paciente}</td>
+									<td>${fluxo.examelab.exame_nome}</td>
+									<td>${fluxo.exame.data_exame}</td>
+									<td>${fluxo.status.status_nome}</td>
+								</tr>
 							</c:forEach>
- 						</tbody>
-						
+						</tbody>
+
 
 					</table>
 
