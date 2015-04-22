@@ -1,17 +1,16 @@
--Arrumar banco de dados com endereço correto conforme solicitado pelo anselmo(requer correções nos codigos)
-
--Arrumar a função de esqueci minha senha
-
 -Arrumar problemas de permissões de login
 
--Arrumar tela de pacientes(Feio pa caralho)
+-Colocar mensagem de confirmação em todas telas que possui deletar
 
--Tentar arrumar a formatação da data no relatório de fluxo de exames
+-Colocar massa de testes em todas tabelas necessarias(Pedrão)
 
--Trocar a função de SAIR para a caixinha de bem vindo
+-Colocar email como campo unico de cada gestor, não pode ter email igual 
+
+-Criar email para clinicalab, para envio de emails
+
+-Colocar botão de gerar pdf no relatório de fluxo de exames
 
 -Criar diagrama de classe de todas as funcionalidades
 
 -Criar diagramas de comunicação das implementações novas
 
--Verificar tabelas para paginação no site
