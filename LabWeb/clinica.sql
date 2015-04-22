@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.2.7.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 22-Abr-2015 às 05:36
--- Versão do servidor: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: 22-Abr-2015 às 22:29
+-- Versão do servidor: 5.5.39
+-- PHP Version: 5.4.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,13 +28,14 @@ USE `clinica`;
 -- Estrutura da tabela `duvidas`
 --
 
+DROP TABLE IF EXISTS `duvidas`;
 CREATE TABLE IF NOT EXISTS `duvidas` (
 `id_duvida` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `mensagem` varchar(200) NOT NULL,
   `status` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Extraindo dados da tabela `duvidas`
@@ -48,7 +49,7 @@ INSERT INTO `duvidas` (`id_duvida`, `nome`, `email`, `mensagem`, `status`) VALUE
 (5, 'Romão Vinicius', 'vinygatinho.69@google.com', 'Primeiramente Boa tarde!', 'Pronto'),
 (6, 'Marcio Marinho', 'marcinhomarinho@gmail.com', 'Vocês fazem exame de fezes?', 'Pendente'),
 (7, 'Roberto Justus', 'justus@empres.com.br', 'Tenho enteresse em ser sócio da clinica se pud,erem entrar em contato nomeu email. Obrigado', 'Pendente'),
-(8, 'Joséfa FalaMuito', 'josefafalomuitomesmo@hotmail.com', 'Olá gente, tudo bem ? <br/> meu nome é Joséfa fala muito e eu venho através desse perguntar se vocês tem alguma filial aqui em Pernambuco, gostaria muito de fazer um exame com vocês. Minha prima de campinas fez um exame ai e gostou muito hehe <br/> Se vocês puderem me responder fico agradecida', 'Pendente'),
+(8, 'Joséfa FalaMuito', 'josefafalomuitomesmo@hotmail.com', 'Olá gente, tudo bem ? <br/> meu nome é Joséfa fala muito e eu venho através desse perguntar se vocês tem alguma filial aqui em Pernambuco, gostaria muito de fazer um exame com vocês. Minha prima de ca', 'Pendente'),
 (9, 'Goku Farias', 'goku.namek@dbz.com.br', 'séhloiro', 'Pronto'),
 (10, 'Ruinho Barrichello', 'nuncaganhoumacorrida@uol.com.br', 'Gostaria de mudar de nome, como faço?', 'Pronto'),
 (11, 'Lucas Farias Lima de Ngola', 'email@email.com.ao', 'sou imigrante da angola, posso fazer meus exames ai?', 'Pronto'),
@@ -62,17 +63,18 @@ INSERT INTO `duvidas` (`id_duvida`, `nome`, `email`, `mensagem`, `status`) VALUE
 (19, 'Json Javascript Jquery', 'htmlcssjsp@bol.com.br', '<p><b>Boa Tarde,</b><br/>Sou desenvolvedor web e estou com LÉR no pulso, vocês me sugerem algum exame?</p>', 'Pendente'),
 (20, 'Danilo Misso', 'danilo.missio@cpqd.com.br', 'Olá mandei uma mensagem a um tempo atras e vocês mandaram eu sair do armário, só queria agradecer funcionou muito bem. obrigadA', 'Pendente');
 
-
 -- --------------------------------------------------------
+
 --
 -- Estrutura da tabela `estado`
 --
 
+DROP TABLE IF EXISTS `estado`;
 CREATE TABLE IF NOT EXISTS `estado` (
 `id_estado` int(11) NOT NULL,
   `sigla_estado` char(2) NOT NULL,
   `nome_estado` varchar(40) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Extraindo dados da tabela `estado`
@@ -113,6 +115,7 @@ INSERT INTO `estado` (`id_estado`, `sigla_estado`, `nome_estado`) VALUES
 -- Estrutura da tabela `exame`
 --
 
+DROP TABLE IF EXISTS `exame`;
 CREATE TABLE IF NOT EXISTS `exame` (
 `id_exame` int(11) NOT NULL,
   `id_tabelaExame` int(11) NOT NULL,
@@ -120,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `exame` (
   `descricao` varchar(200) NOT NULL,
   `id_status` int(4) NOT NULL,
   `Data_exame` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
 
 --
 -- Extraindo dados da tabela `exame`
@@ -143,23 +146,23 @@ INSERT INTO `exame` (`id_exame`, `id_tabelaExame`, `id_paciente`, `descricao`, `
 (14, 88, 13, 'DESCRICAO EXAME', 1, '2003-04-30'),
 (15, 55, 15, 'DESCRICAO EXAME', 1, '2009-09-28'),
 (16, 12, 15, 'DESCRICAO EXAME', 2, '2015-03-29'),
-(17, 01, 16, 'DESCRICAO EXAME', 1, '2014-03-09'),
-(18, 03, 17, 'DESCRICAO EXAME', 1, '2015-01-09'),
-(29, 92, 18, 'DESCRICAO EXAME', 1, '2010-10-22'),
+(17, 7, 16, 'DESCRICAO EXAME', 1, '2014-03-09'),
+(18, 10, 17, 'DESCRICAO EXAME', 1, '2015-01-09'),
+(19, 92, 18, 'DESCRICAO EXAME', 1, '2010-10-22'),
 (20, 147, 19, 'DESCRICAO EXAME', 2, '2015-04-15'),
 (21, 211, 20, 'DESCRICAO EXAME', 1, '2015-02-12'),
 (22, 200, 1, 'DESCRICAO EXAME', 2, '2015-03-02'),
 (23, 167, 2, 'DESCRICAO EXAME', 2, '2015-04-05'),
 (24, 190, 3, 'DESCRICAO EXAME', 1, '2011-07-03'),
 (25, 72, 4, 'DESCRICAO EXAME', 1, '2015-02-01'),
-(26, 1, 5, 'DESCRICAO EXAME', 2, '2015-01-30'),
+(26, 54, 5, 'DESCRICAO EXAME', 2, '2015-01-30'),
 (27, 8, 6, 'DESCRICAO EXAME', 1, '2012-08-16'),
 (28, 28, 7, 'DESCRICAO EXAME', 2, '2015-02-13'),
 (29, 133, 8, 'DESCRICAO EXAME', 1, '2014-10-18'),
 (30, 111, 9, 'DESCRICAO EXAME', 1, '2009-03-24'),
 (31, 77, 10, 'DESCRICAO EXAME', 2, '2015-04-01'),
 (32, 9, 11, 'DESCRICAO EXAME', 2, '2015-03-28'),
-(33, 212, 12, 'DESCRICAO EXAME', 1, '2013-08-02'),
+(33, 203, 12, 'DESCRICAO EXAME', 1, '2013-08-02'),
 (34, 153, 13, 'DESCRICAO EXAME', 1, '2012-11-19'),
 (35, 187, 14, 'DESCRICAO EXAME', 1, '2011-05-23'),
 (36, 164, 20, 'DESCRICAO EXAME', 2, '2015-04-21'),
@@ -178,21 +181,19 @@ INSERT INTO `exame` (`id_exame`, `id_tabelaExame`, `id_paciente`, `descricao`, `
 (49, 65, 3, 'DESCRICAO EXAME', 2, '2015-03-30'),
 (50, 177, 9, 'DESCRICAO EXAME', 2, '2015-04-17');
 
-
-
-
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `logradouro`
 --
 
+DROP TABLE IF EXISTS `logradouro`;
 CREATE TABLE IF NOT EXISTS `logradouro` (
 `id_logradouro` int(11) NOT NULL,
   `cep` varchar(20) NOT NULL,
   `endereco` varchar(200) NOT NULL,
   `bairro` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Extraindo dados da tabela `logradouro`
@@ -220,13 +221,13 @@ INSERT INTO `logradouro` (`id_logradouro`, `cep`, `endereco`, `bairro`) VALUES
 (19, '13046510', 'Rua Antônio Vicente de Paula', 'Jardim Samambaia'),
 (20, '13046540', 'Rua Joaquim Severino', 'Jardim Samambaia');
 
-
 -- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `paciente`
 --
 
+DROP TABLE IF EXISTS `paciente`;
 CREATE TABLE IF NOT EXISTS `paciente` (
 `id_paciente` int(11) NOT NULL,
   `cod_verif` int(20) NOT NULL,
@@ -242,21 +243,20 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `telefone_paciente` varchar(20) DEFAULT NULL,
   `email_paciente` varchar(100) DEFAULT NULL,
   `convenio_paciente` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Extraindo dados da tabela `paciente`
 --
 
-
 INSERT INTO `paciente` (`id_paciente`, `cod_verif`, `nome_paciente`, `rg_paciente`, `cpf_paciente`, `id_logradouro`, `cidade_endereco`, `numero_endereco`, `complemento_endereco`, `id_estado`, `datanasc_paciente`, `telefone_paciente`, `email_paciente`, `convenio_paciente`) VALUES
 (1, 563254416, 'Danilo César Missio', '49.516.483-5', '422.076.628-61', 1, 'Campinas', 1695, '', 24, '1993-05-12', '(19)3388-5101', 'danilo.missio@hotmail.com', 'Unimed'),
-(2, 566906246, 'Pedro Vinicus Marcolongo Gimenes', '49.549.459-4', '422.076.628-61', 2, 'Campinas', 1695, 'ap 93 ', 24, '1994-16-04', '(19)3213-7060', 'pedrov.gimenes@hotmail.com', 'Beneficiência Portuguesa'),
+(2, 566906246, 'Pedro Vinicus Marcolongo Gimenes', '49.549.459-4', '422.076.628-61', 2, 'Campinas', 1695, 'ap 93 ', 24, '0000-00-00', '(19)3213-7060', 'pedrov.gimenes@hotmail.com', 'Beneficiência Portug'),
 (3, 115369604, 'Vinicius Romão', '44.984.984-9', '483.566.961-43', 3, 'Campinas', 123, 'ap 77', 24, '1993-05-01', '(19)3388-5121', 'viiny.romao@gmail.com', 'Unimed'),
 (4, 652487925, 'Marcia Fagundes Pereira da Silva Junior', '78.654.982-8', '454.743.614-24', 4, 'Campinas', 54, '', 24, '1954-12-22', '(19)3242-0683', 'marcinha.camburao@ig.com.br', 'Sul América'),
 (5, 201548750, 'Gabriel Piccolito', '88.654.895-8', '681.706.822-31', 5, 'Campinas', 8774, '', 24, '1992-01-24', '(19)3564-8547', 'gabelocao@hotmail.com', 'Santa Helena Saúde'),
-(6, 987654321, 'Felipe Nogueira', '46.654.654-3', '391.786.366-98', 6, 'Campinas', 544, 'Apto 421', 24, '1987-09-30', '(19)3214-9877', 'felipe.nogueira@email.com', 'Beneficiência Portuguesa'),
-(7, 021548965, 'Roselle Amaral Pinto', '65.854.852-7', '595.828.887-33', 7, 'Campinas', 9877, 'Próximo ao posto interlagos', 24, '1988-04-19', '(19)3213-6070', 'roselle.amaral@bol.com.br', 'Bradesco Saúde'),
+(6, 987654321, 'Felipe Nogueira', '46.654.654-3', '391.786.366-98', 6, 'Campinas', 544, 'Apto 421', 24, '1987-09-30', '(19)3214-9877', 'felipe.nogueira@email.com', 'Beneficiência Portug'),
+(7, 21548965, 'Roselle Amaral Pinto', '65.854.852-7', '595.828.887-33', 7, 'Campinas', 9877, 'Próximo ao posto interlagos', 24, '1988-04-19', '(19)3213-6070', 'roselle.amaral@bol.com.br', 'Bradesco Saúde'),
 (8, 654321225, 'Fernando Cerqueira Pinto', '20.874.523-7', '845.949.878-69', 8, 'Campinas', 85, '', 24, '1966-07-02', '(19)3556-8745', 'fernando.cerqueira@ig.com.br', 'Intermédica'),
 (9, 172328727, 'Fernando Ferreira', '56.987.625-2', '881.638.166-35', 9, 'Campinas', 201, '', 24, '1955-08-04', '(19)3210-3215', 'fernando.ferreira@ibm.com', 'Unimed'),
 (10, 821378219, 'Caio Francisco Rubelo de Mello', '54.987.544-9', '416.886.833-80', 10, 'Campinas', 10, 'Cond.das Pedras - Apto 24', 24, '1989-08-15', '(19)3201-5588', 'caio.rubelo@sottelli.com', 'Intermédica'),
@@ -267,10 +267,9 @@ INSERT INTO `paciente` (`id_paciente`, `cod_verif`, `nome_paciente`, `rg_pacient
 (15, 728137821, 'Caio Guilherme de Carvalho', '25.987.654-3', '072.353.157-92', 15, 'Campinas', 58, '', 24, '1978-03-18', '(19)3215-7848', 'caio.carvalho@hotmail.com', 'Sul América'),
 (16, 213283822, 'Alexandre Forion Borges', '99.985.625-9', '229.736.147-59', 16, 'Campinas', 999, '', 24, '1995-11-11', '(19)9515-0478', 'alexandre.borges@gamil.com', 'Intermédica'),
 (17, 222222222, 'Fabiana Mendes Fagundes', '81.321.520-8', '671.377.469-50', 17, 'Campinas', 1500, 'Apto 55 - 5 andar', 24, '1948-05-12', '(19)3213-2222', 'fabiana.fagundes@bol.com.br', 'Unimed'),
-(18, 823721820, 'Fabio Wustemberg Germano', '98.521.855-7', '763.282.841-95', 18, 'Campinas', 2000, 'Apto 8', 24, '1964-08-06', '(19)3254-6659', 'fabio.germano@camprev.gov.br', 'Beneficiência Portuguesa'),
-(19, 091283292, 'Vitor Zandonadi', '30.200.784-3', '034.711.131-93', 19, 'Campinas', 10, '', 24, '1992-08-17', '(19)3278-1312', 'vitor.zandonadi@email.com.br', 'BioVida'),
+(18, 823721820, 'Fabio Wustemberg Germano', '98.521.855-7', '763.282.841-95', 18, 'Campinas', 2000, 'Apto 8', 24, '1964-08-06', '(19)3254-6659', 'fabio.germano@camprev.gov.br', 'Beneficiência Portug'),
+(19, 91283292, 'Vitor Zandonadi', '30.200.784-3', '034.711.131-93', 19, 'Campinas', 10, '', 24, '1992-08-17', '(19)3278-1312', 'vitor.zandonadi@email.com.br', 'BioVida'),
 (20, 202002020, 'João Bosco', '78.365.987-0', '134.559.788-60', 20, 'Campinas', 3333, '', 24, '1954-08-09', '(19)3242-1515', 'joao.bosco@gmail.com', 'Medial Saúde');
-
 
 -- --------------------------------------------------------
 
@@ -278,6 +277,7 @@ INSERT INTO `paciente` (`id_paciente`, `cod_verif`, `nome_paciente`, `rg_pacient
 -- Estrutura da tabela `status_exame`
 --
 
+DROP TABLE IF EXISTS `status_exame`;
 CREATE TABLE IF NOT EXISTS `status_exame` (
   `id_status` int(4) NOT NULL,
   `status_nome` varchar(20) NOT NULL
@@ -297,11 +297,12 @@ INSERT INTO `status_exame` (`id_status`, `status_nome`) VALUES
 -- Estrutura da tabela `tabela_exame`
 --
 
+DROP TABLE IF EXISTS `tabela_exame`;
 CREATE TABLE IF NOT EXISTS `tabela_exame` (
 `id_tabelaExame` int(11) NOT NULL,
   `exame_nome` varchar(100) NOT NULL,
   `procedimento` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=212 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=212 ;
 
 --
 -- Extraindo dados da tabela `tabela_exame`
@@ -520,6 +521,7 @@ INSERT INTO `tabela_exame` (`id_tabelaExame`, `exame_nome`, `procedimento`) VALU
 -- Estrutura da tabela `usuarios`
 --
 
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
 `id_usuario` int(11) NOT NULL,
   `nome` varchar(200) NOT NULL,
@@ -527,7 +529,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `perfil_usuario` tinyint(4) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Extraindo dados da tabela `usuarios`
