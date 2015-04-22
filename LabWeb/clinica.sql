@@ -34,17 +34,36 @@ CREATE TABLE IF NOT EXISTS `duvidas` (
   `email` varchar(50) NOT NULL,
   `mensagem` varchar(200) NOT NULL,
   `status` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `duvidas`
 --
 
 INSERT INTO `duvidas` (`id_duvida`, `nome`, `email`, `mensagem`, `status`) VALUES
-(9, 'asdfsadfsadf', 'as', 'sad', 'Pendente');
+(1, 'José da Silva Pinto', 'jose.pinto@gmail.com', 'Olá gostaria de saber se vocês possuem exame de HIV', 'Pendente'),
+(2, 'Maria Cristina', 'marcris@hotmail.com', 'Gostaria de saber qual o horário de atendimento', 'Pendente'),
+(3, 'Danilo Missio', 'danilinho24@hotmail.com', 'Hoje acordei meio estranho, podem me ajudar?', 'Pronto'),
+(4, 'Jurema Lucréia Maria Silva ', 'jujusisi@uol.com.br', 'mim add no face oxente vcs num mi aceita', 'Pronto'),
+(5, 'Romão Vinicius', 'vinygatinho.69@google.com', 'Primeiramente Boa tarde!', 'Pronto'),
+(6, 'Marcio Marinho', 'marcinhomarinho@gmail.com', 'Vocês fazem exame de fezes?', 'Pendente'),
+(7, 'Roberto Justus', 'justus@empres.com.br', 'Tenho enteresse em ser sócio da clinica se pud,erem entrar em contato nomeu email. Obrigado', 'Pendente'),
+(8, 'Joséfa FalaMuito', 'josefafalomuitomesmo@hotmail.com', 'Olá gente, tudo bem ? <br/> meu nome é Joséfa fala muito e eu venho através desse perguntar se vocês tem alguma filial aqui em Pernambuco, gostaria muito de fazer um exame com vocês. Minha prima de campinas fez um exame ai e gostou muito hehe <br/> Se vocês puderem me responder fico agradecida', 'Pendente'),
+(9, 'Goku Farias', 'goku.namek@dbz.com.br', 'séhloiro', 'Pronto'),
+(10, 'Ruinho Barrichello', 'nuncaganhoumacorrida@uol.com.br', 'Gostaria de mudar de nome, como faço?', 'Pronto'),
+(11, 'Lucas Farias Lima de Ngola', 'email@email.com.ao', 'sou imigrante da angola, posso fazer meus exames ai?', 'Pronto'),
+(12, 'Joaquim Muhongo', 'joaquim.muhongo@angola.com.ao', 'Minha filha esta com dores vaginais vocês tem exames para isso?', 'Pendente'),
+(13, 'Gabriel Majimbu', 'gabriel.majimbu@namek.dbz', 'Meus poderes estão acabando vocês possuem algum exame para aumentar meu chi?', 'Pendente'),
+(14, 'Confuso Sobrinho', 'cofuosobino@htmliail.co', 'dia om, veces po de mim ahuda...........xa.........uu.....', 'Pronto'),
+(15, 'MC Rodolfinho', 'mcrodolfinho@contato.com.br', 'Salve, salve...familia. Paparazzi ta de olho em nóis, boa fase pré, ao vivo e pós', 'Pendente'),
+(16, 'Kid Bengola', 'kid40cm@nacam.com', 'Os mlk é liso????', 'Pronto'),
+(17, 'Bruno Cassarola', 'bruno.cassarola@ig.com.br', 'Bom dia, fiz um exame no dia 02/04/2015 e até agora ele consta como Pendente', 'Pronto'),
+(18, 'Vanilson Reepson', 'vanirepson@hotmail.com', 'Qual o horario de funcionamento de vocês? obrigado', 'Pronto'),
+(19, 'Json Javascript Jquery', 'htmlcssjsp@bol.com.br', '<p><b>Boa Tarde,</b><br/>Sou desenvolvedor web e estou com LÉR no pulso, vocês me sugerem algum exame?</p>', 'Pendente'),
+(20, 'Danilo Misso', 'danilo.missio@cpqd.com.br', 'Olá mandei uma mensagem a um tempo atras e vocês mandaram eu sair do armário, só queria agradecer funcionou muito bem. obrigadA', 'Pendente');
+
 
 -- --------------------------------------------------------
-
 --
 -- Estrutura da tabela `estado`
 --
@@ -101,14 +120,66 @@ CREATE TABLE IF NOT EXISTS `exame` (
   `descricao` varchar(200) NOT NULL,
   `id_status` int(4) NOT NULL,
   `Data_exame` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `exame`
 --
 
 INSERT INTO `exame` (`id_exame`, `id_tabelaExame`, `id_paciente`, `descricao`, `id_status`, `Data_exame`) VALUES
-(69, 10, 15, 'asdasd', 1, '2015-04-08');
+(1, 10, 1, 'DESCRICAO EXAME', 1, '2014-10-08'),
+(2, 50, 2, 'DESCRICAO EXAME', 2, '2015-04-10'),
+(3, 150, 3, 'DESCRICAO EXAME', 2, '2015-03-30'),
+(4, 188, 4, 'DESCRICAO EXAME', 1, '2013-08-08'),
+(5, 178, 5, 'DESCRICAO EXAME', 1, '2015-04-01'),
+(6, 151, 6, 'DESCRICAO EXAME', 2, '2015-04-20'),
+(7, 20, 7, 'DESCRICAO EXAME', 1, '2012-07-08'),
+(8, 200, 8, 'DESCRICAO EXAME', 1, '2014-12-08'),
+(9, 78, 9, 'DESCRICAO EXAME', 1, '2015-04-08'),
+(10, 98, 10, 'DESCRICAO EXAME', 1, '2014-11-16'),
+(11, 99, 11, 'DESCRICAO EXAME', 1, '2014-04-18'),
+(12, 105, 12, 'DESCRICAO EXAME', 1, '2011-02-03'),
+(13, 201, 14, 'DESCRICAO EXAME', 2, '2015-04-22'),
+(14, 88, 13, 'DESCRICAO EXAME', 1, '2003-04-30'),
+(15, 55, 15, 'DESCRICAO EXAME', 1, '2009-09-28'),
+(16, 12, 15, 'DESCRICAO EXAME', 2, '2015-03-29'),
+(17, 01, 16, 'DESCRICAO EXAME', 1, '2014-03-09'),
+(18, 03, 17, 'DESCRICAO EXAME', 1, '2015-01-09'),
+(29, 92, 18, 'DESCRICAO EXAME', 1, '2010-10-22'),
+(20, 147, 19, 'DESCRICAO EXAME', 2, '2015-04-15'),
+(21, 211, 20, 'DESCRICAO EXAME', 1, '2015-02-12'),
+(22, 200, 1, 'DESCRICAO EXAME', 2, '2015-03-02'),
+(23, 167, 2, 'DESCRICAO EXAME', 2, '2015-04-05'),
+(24, 190, 3, 'DESCRICAO EXAME', 1, '2011-07-03'),
+(25, 72, 4, 'DESCRICAO EXAME', 1, '2015-02-01'),
+(26, 1, 5, 'DESCRICAO EXAME', 2, '2015-01-30'),
+(27, 8, 6, 'DESCRICAO EXAME', 1, '2012-08-16'),
+(28, 28, 7, 'DESCRICAO EXAME', 2, '2015-02-13'),
+(29, 133, 8, 'DESCRICAO EXAME', 1, '2014-10-18'),
+(30, 111, 9, 'DESCRICAO EXAME', 1, '2009-03-24'),
+(31, 77, 10, 'DESCRICAO EXAME', 2, '2015-04-01'),
+(32, 9, 11, 'DESCRICAO EXAME', 2, '2015-03-28'),
+(33, 212, 12, 'DESCRICAO EXAME', 1, '2013-08-02'),
+(34, 153, 13, 'DESCRICAO EXAME', 1, '2012-11-19'),
+(35, 187, 14, 'DESCRICAO EXAME', 1, '2011-05-23'),
+(36, 164, 20, 'DESCRICAO EXAME', 2, '2015-04-21'),
+(37, 53, 16, 'DESCRICAO EXAME', 2, '2015-04-12'),
+(38, 120, 17, 'DESCRICAO EXAME', 1, '2014-09-27'),
+(39, 201, 18, 'DESCRICAO EXAME', 1, '2014-12-18'),
+(40, 94, 19, 'DESCRICAO EXAME', 2, '2015-03-15'),
+(41, 164, 2, 'DESCRICAO EXAME', 1, '2013-07-17'),
+(42, 33, 20, 'DESCRICAO EXAME', 1, '2014-05-25'),
+(43, 29, 5, 'DESCRICAO EXAME', 2, '2015-04-01'),
+(44, 176, 8, 'DESCRICAO EXAME', 1, '2014-02-02'),
+(45, 199, 10, 'DESCRICAO EXAME', 2, '2015-04-20'),
+(46, 205, 16, 'DESCRICAO EXAME', 1, '2013-07-07'),
+(47, 176, 18, 'DESCRICAO EXAME', 1, '2012-03-20'),
+(48, 100, 1, 'DESCRICAO EXAME', 1, '2009-12-12'),
+(49, 65, 3, 'DESCRICAO EXAME', 2, '2015-03-30'),
+(50, 177, 9, 'DESCRICAO EXAME', 2, '2015-04-17');
+
+
+
 
 -- --------------------------------------------------------
 
@@ -121,15 +192,34 @@ CREATE TABLE IF NOT EXISTS `logradouro` (
   `cep` varchar(20) NOT NULL,
   `endereco` varchar(200) NOT NULL,
   `bairro` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `logradouro`
 --
 
 INSERT INTO `logradouro` (`id_logradouro`, `cep`, `endereco`, `bairro`) VALUES
-(1, '13033615', 'Rua Antonio Rodrigues de Carvalho', 'Vila Proost Souza'),
-(2, '13033720', 'vila cu de rola', 'meu pau');
+(1, '13033615', 'Rua Antonio Rodrigues de Carvalho', 'Vila Proost de Souza'),
+(2, '13033720', 'Rua Professor João Augusto de Toledo', 'Vila Proost de Souza'),
+(3, '13033555', 'Praça João Alves', 'Jardim Magnólia'),
+(4, '12220971', 'Rua Israel Diamante', 'Vila Industrial'),
+(5, '13073009', 'Praça Vinte e Cinco de Abril', 'Jardim Brasil'),
+(6, '13073010', 'Rua Buarque de Macedo', 'Jardim Brasil'),
+(7, '13069480', 'Rua Maria Cândida Conceição', 'Jardim Mirassol'),
+(8, '13069530', 'Rua Valentin Biffi', 'Jardim Mirassol'),
+(9, '13060461', 'Rua José Machado', 'Jardim Santa Lúcia'),
+(10, '13060494', 'Rua Juréia', 'Jardim Santa Lúcia'),
+(11, '13034340', 'Rua Michelina Spina Samartine', 'Vila Iapi'),
+(12, '13034450', 'Rua João Virgílio Baptista', 'Vila Iapi'),
+(13, '13087635', 'Avenida Guilherme Campos', 'Parque das Flores'),
+(14, '13087610', 'Rua Luiz Oliveira', 'Parque das Flores'),
+(15, '13077112', 'Rua B', 'Novo Taquaral'),
+(16, '13077101', 'Rua Arlindo Carpino', 'Novo Taquaral'),
+(17, '13044745', 'Rua da Administração', 'Núcleo Residencial Bairro da Vitória'),
+(18, '13044780', 'Rua Feliz Esperança', 'Núcleo Residencial Bairro da Vitória'),
+(19, '13046510', 'Rua Antônio Vicente de Paula', 'Jardim Samambaia'),
+(20, '13046540', 'Rua Joaquim Severino', 'Jardim Samambaia');
+
 
 -- --------------------------------------------------------
 
@@ -152,16 +242,35 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   `telefone_paciente` varchar(20) DEFAULT NULL,
   `email_paciente` varchar(100) DEFAULT NULL,
   `convenio_paciente` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `paciente`
 --
 
+
 INSERT INTO `paciente` (`id_paciente`, `cod_verif`, `nome_paciente`, `rg_paciente`, `cpf_paciente`, `id_logradouro`, `cidade_endereco`, `numero_endereco`, `complemento_endereco`, `id_estado`, `datanasc_paciente`, `telefone_paciente`, `email_paciente`, `convenio_paciente`) VALUES
-(15, 563254416, 'Danilo Missio', '49.516.483-5', '422.076.628-61', 1, 'Campinas', 1695, 'nada', 1, '1993-05-12', '(19)3388-5101', 'danilo.missio@hotmail.com', 'Unimed'),
-(17, 566906246, 'Pedro Gimenes', '49.549.459-4', '422.076.628-61', 1, 'campinas', 1695, 'ap 93 ', 1, '1993-05-01', '(19)3388-5101', 'danilo.missio@hotmail.com', 'unimed'),
-(18, 115369604, 'asdad', '44.984.984-9', '422.076.628-61', 2, 'camp', 123, 'ap 93', 1, '1993-05-01', '(19)3388-5101', 'danilo.missio@hotmail.com', 'unimed');
+(1, 563254416, 'Danilo César Missio', '49.516.483-5', '422.076.628-61', 1, 'Campinas', 1695, '', 24, '1993-05-12', '(19)3388-5101', 'danilo.missio@hotmail.com', 'Unimed'),
+(2, 566906246, 'Pedro Vinicus Marcolongo Gimenes', '49.549.459-4', '422.076.628-61', 2, 'Campinas', 1695, 'ap 93 ', 24, '1994-16-04', '(19)3213-7060', 'pedrov.gimenes@hotmail.com', 'Beneficiência Portuguesa'),
+(3, 115369604, 'Vinicius Romão', '44.984.984-9', '483.566.961-43', 3, 'Campinas', 123, 'ap 77', 24, '1993-05-01', '(19)3388-5121', 'viiny.romao@gmail.com', 'Unimed'),
+(4, 652487925, 'Marcia Fagundes Pereira da Silva Junior', '78.654.982-8', '454.743.614-24', 4, 'Campinas', 54, '', 24, '1954-12-22', '(19)3242-0683', 'marcinha.camburao@ig.com.br', 'Sul América'),
+(5, 201548750, 'Gabriel Piccolito', '88.654.895-8', '681.706.822-31', 5, 'Campinas', 8774, '', 24, '1992-01-24', '(19)3564-8547', 'gabelocao@hotmail.com', 'Santa Helena Saúde'),
+(6, 987654321, 'Felipe Nogueira', '46.654.654-3', '391.786.366-98', 6, 'Campinas', 544, 'Apto 421', 24, '1987-09-30', '(19)3214-9877', 'felipe.nogueira@email.com', 'Beneficiência Portuguesa'),
+(7, 021548965, 'Roselle Amaral Pinto', '65.854.852-7', '595.828.887-33', 7, 'Campinas', 9877, 'Próximo ao posto interlagos', 24, '1988-04-19', '(19)3213-6070', 'roselle.amaral@bol.com.br', 'Bradesco Saúde'),
+(8, 654321225, 'Fernando Cerqueira Pinto', '20.874.523-7', '845.949.878-69', 8, 'Campinas', 85, '', 24, '1966-07-02', '(19)3556-8745', 'fernando.cerqueira@ig.com.br', 'Intermédica'),
+(9, 172328727, 'Fernando Ferreira', '56.987.625-2', '881.638.166-35', 9, 'Campinas', 201, '', 24, '1955-08-04', '(19)3210-3215', 'fernando.ferreira@ibm.com', 'Unimed'),
+(10, 821378219, 'Caio Francisco Rubelo de Mello', '54.987.544-9', '416.886.833-80', 10, 'Campinas', 10, 'Cond.das Pedras - Apto 24', 24, '1989-08-15', '(19)3201-5588', 'caio.rubelo@sottelli.com', 'Intermédica'),
+(11, 901092190, 'Henrique Juliano Gonçalves', '54.952.320-X', '571.410.722-50', 11, 'Campinas', 520, '', 24, '1985-04-29', '(19)4215-6521', 'henrique.juliano@email.com.br', 'Bradesco Saúde'),
+(12, 823782182, 'Cludio Maciel Pereira Campos', '20.620.720-2', '165.869.757-00', 12, 'Campinas', 1470, 'Apartamento 89 - Terreo', 24, '1994-04-19', '(19)3254-9632', 'maciel.campos@gmail.com', 'Sul América'),
+(13, 182378218, 'Kenney Maquese', '85.654.878-9', '477.048.312-08', 13, 'Campinas', 777, '', 24, '1975-08-05', '(19)3215-9521', 'kenney.maquese@cpqd.com.br', 'Medial Saúde'),
+(14, 782138721, 'Letícia Fraga Costa', '20.202.145-9', '623.285.851-40', 14, 'Campinas', 5445, 'Complemento teste', 24, '1966-02-10', '(19)3214-8547', 'leticia.fraga@psn.com', 'BioVida'),
+(15, 728137821, 'Caio Guilherme de Carvalho', '25.987.654-3', '072.353.157-92', 15, 'Campinas', 58, '', 24, '1978-03-18', '(19)3215-7848', 'caio.carvalho@hotmail.com', 'Sul América'),
+(16, 213283822, 'Alexandre Forion Borges', '99.985.625-9', '229.736.147-59', 16, 'Campinas', 999, '', 24, '1995-11-11', '(19)9515-0478', 'alexandre.borges@gamil.com', 'Intermédica'),
+(17, 222222222, 'Fabiana Mendes Fagundes', '81.321.520-8', '671.377.469-50', 17, 'Campinas', 1500, 'Apto 55 - 5 andar', 24, '1948-05-12', '(19)3213-2222', 'fabiana.fagundes@bol.com.br', 'Unimed'),
+(18, 823721820, 'Fabio Wustemberg Germano', '98.521.855-7', '763.282.841-95', 18, 'Campinas', 2000, 'Apto 8', 24, '1964-08-06', '(19)3254-6659', 'fabio.germano@camprev.gov.br', 'Beneficiência Portuguesa'),
+(19, 091283292, 'Vitor Zandonadi', '30.200.784-3', '034.711.131-93', 19, 'Campinas', 10, '', 24, '1992-08-17', '(19)3278-1312', 'vitor.zandonadi@email.com.br', 'BioVida'),
+(20, 202002020, 'João Bosco', '78.365.987-0', '134.559.788-60', 20, 'Campinas', 3333, '', 24, '1954-08-09', '(19)3242-1515', 'joao.bosco@gmail.com', 'Medial Saúde');
+
 
 -- --------------------------------------------------------
 
@@ -418,16 +527,19 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `perfil_usuario` tinyint(4) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nome`, `telefone`, `email`, `password`, `perfil_usuario`) VALUES
-(1, 'gestor', '32234565', 'pic@rage.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
-(2, 'administrador', '998767652', 'adm@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1),
-(3, 'danilo', '33885101', 'danilo.missio@hotmail.com', '99996b911567c83cce17cdf194f314975c57ddf1', 2);
+(1, 'gestor', '(19)3223-4565', 'gestor@email.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
+(2, 'administrador', '(17)9987-7652', 'adm@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1),
+(3, 'danilo.missio', '(19)3388-1201', 'danilo.missio@hotmail.com', '99996b911567c83cce17cdf194f314975c57ddf1', 1),
+(4, 'pedro.gimenes', '(19)3213-7060', 'pedrov.gimenes@hotmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1),
+(5, 'vinicius.romao', '(19)3254-9521', 'viiny.romao@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 2),
+(6, 'gabriel.piccolo', '(19)3874-6666', 'gabelocao@gmai.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1);
 
 --
 -- Indexes for dumped tables
@@ -489,7 +601,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `duvidas`
 --
 ALTER TABLE `duvidas`
-MODIFY `id_duvida` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id_duvida` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `estado`
 --
@@ -499,17 +611,17 @@ MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 -- AUTO_INCREMENT for table `exame`
 --
 ALTER TABLE `exame`
-MODIFY `id_exame` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=70;
+MODIFY `id_exame` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT for table `logradouro`
 --
 ALTER TABLE `logradouro`
-MODIFY `id_logradouro` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_logradouro` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `paciente`
 --
 ALTER TABLE `paciente`
-MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `tabela_exame`
 --
@@ -519,7 +631,7 @@ MODIFY `id_tabelaExame` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=212;
 -- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
