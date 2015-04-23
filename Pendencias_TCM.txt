@@ -10,6 +10,8 @@
 
 -Colocar botão de gerar pdf no relatório de fluxo de exames
 
+-Colocar contador no relatório de fluzo de exames e no pdf
+
 -Criar diagrama de classe de todas as funcionalidades
 
 -Criar diagramas de comunicação das implementações novas
