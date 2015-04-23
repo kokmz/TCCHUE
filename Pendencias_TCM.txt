@@ -12,6 +12,10 @@
 
 -Criar a ultima funcionalidade do site - histórico de exames de um paciente
 
+-Criar tela para mudança de senha de gestor e administrador
+
+-Criar opção para ser adm ou gestor no cadastro de gestores
+
 -Criar diagrama de classe de todas as funcionalidades
 
 -Criar diagramas de comunicação das implementações novas
