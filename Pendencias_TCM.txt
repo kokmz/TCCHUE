@@ -2,15 +2,15 @@
 
 -Colocar mensagem de confirmação em todas telas que possui deletar
 
--Colocar massa de testes em todas tabelas necessarias(Pedrão)
-
--Colocar email como campo unico de cada gestor, não pode ter email igual 
-
 -Criar email para clinicalab, para envio de emails
 
 -Colocar botão de gerar pdf no relatório de fluxo de exames
 
--Colocar contador no relatório de fluzo de exames e no pdf
+-Colocar contador no relatório de fluxo de exames e no pdf do prontuario
+
+-Colocar mascaras nos campos de gestor
+
+-Criar a ultima funcionalidade do site - histórico de exames de um paciente
 
 -Criar diagrama de classe de todas as funcionalidades
 
