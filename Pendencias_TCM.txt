@@ -14,6 +14,8 @@
 
 -Criar tela para mudança de senha de gestor e administrador
 
+-Arrumar duvida, pois aparece tudo em uma linha só
+
 -Criar opção para ser adm ou gestor no cadastro de gestores
 
 -Criar diagrama de classe de todas as funcionalidades
