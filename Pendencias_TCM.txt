@@ -13,3 +13,4 @@
 
 -Criar diagramas de comunicação das implementações novas
 
+-Colocar medico no relatório de historio de exame
