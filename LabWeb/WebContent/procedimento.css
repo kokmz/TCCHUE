@@ -1,0 +1,71 @@
+/* Codigo original do CodePan com algumas alterções de estetica */
+
+h1.boxP {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #999;
+}
+
+.box {
+  position: absolute;
+  box-sizing: border-box;
+  left: 50%;
+  width: 500px;
+  margin-top: 110px;
+  margin-left: -250px;
+  padding: 20px;
+  color: Black;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  background: White;
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+}
+
+.procedimentoPaciente {
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  height: 30px;
+}
+.procedimentoPaciente .back-side {
+  border-style: solid;
+  border-width: 5px 5px 5px 5px;
+  border-color: transparent #4682b4 #4682b4 transparent;
+  position: absolute;
+  left: -10px;
+  top: -1px;
+}
+.procedimentoPaciente .front-side {
+  position: relative;
+  padding: 0 15px;
+  background: #4682b4;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+  padding-top: 4px;
+}
+.procedimentoPaciente .front-side:before, .procedimentoPaciente .front-side:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+}
+.procedimentoPaciente .front-side:before {
+  left: 0;
+  border-style: solid;
+  border-width: 6px 40px 6px 40px;
+  border-color: #4682b4 transparent transparent #4682b4;
+}
+.procedimentoPaciente .front-side:after {
+  right: 0;
+  border-style: solid;
+  border-width: 6px 40px 6px 40px;
+  border-color: #4682b4 #4682b4 transparent transparent;
+}
+
+.voltarbotaoP{
+
+}
