@@ -1,20 +1,11 @@
--Arrumar problemas de permissões de login
 
 -Colocar mensagem de confirmação em todas telas que possui deletar
 
--Criar email para clinicalab, para envio de emails
-
--Colocar botão de gerar pdf no relatório de fluxo de exames
-
 -Colocar contador no relatório de fluxo de exames e no pdf do prontuario
 
--Colocar mascaras nos campos de gestor
-
--Criar a ultima funcionalidade do site - histórico de exames de um paciente
+-Criar a ultima funcionalidade do site - histórico de exames de um paciente(FALTA PDF)
 
 -Criar tela para mudança de senha de gestor e administrador
-
--Arrumar duvida, pois aparece tudo em uma linha só
 
 -Criar opção para ser adm ou gestor no cadastro de gestores
 
