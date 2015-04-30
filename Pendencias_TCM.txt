@@ -3,14 +3,8 @@
 
 -Colocar contador no relatório de fluxo de exames e no pdf do prontuario
 
--Criar a ultima funcionalidade do site - histórico de exames de um paciente(FALTA PDF)
-
 -Criar tela para mudança de senha de gestor e administrador
-
--Criar opção para ser adm ou gestor no cadastro de gestores
 
 -Criar diagrama de classe de todas as funcionalidades
 
 -Criar diagramas de comunicação das implementações novas
-
--Colocar medico no relatório de historio de exame
