@@ -32,38 +32,6 @@
 		$("#telefone").mask("(99)9999-9999");
 	});
 </script>
- <script>
- var dialog;
-  dialog= $(function() {
-    $( "#dialog-form" ).dialog({
-      autoOpen: false,
-      show: {
-        effect: "blind",
-        duration: 1000
-      },
-      hide: {
-        effect: "explode",
-        duration: 1000
-      },
-      buttons: {
-          Alterar: function() {
-        	  get: mudarsenhaServlet;       	  
-          },
-          Cancel: function() {
-            dialog.dialog( "close" );
-          }
-        },
-     close: function() {
-          form[ 0 ].reset();
-          allFields.removeClass( "ui-state-error" );
-        }
-    });
- 
-    $( "#abrirtela").button().on( "click", function() {
-        dialog.dialog("open");
-    });
-  });
-  </script>
 
 <div id="pagina">
 <div id="conteudo">
@@ -92,25 +60,7 @@
 							Inválido.</span></p>			
 			<input id="botaum_g" type="submit" value="Enviar" />
 	</form>	
-	
-<div id="dialog-form" title="Create new user" style="display:none">
-  <p class="validateTips">All form fields are required.</p>
- 
-  <form>
-    <fieldset>
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
- 
-      <!-- Allow form submission with keyboard without duplicating the dialog button -->
-      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-    </fieldset>
-  </form>
-</div>
-	<button id="abrirtela">Alterar senha</button>
+
 
 </c:if>
 </div>
