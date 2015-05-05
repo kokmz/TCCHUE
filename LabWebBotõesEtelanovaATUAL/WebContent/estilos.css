@@ -313,21 +313,20 @@ th{
 }
 
 #mensagem_contato{
+   position:absolute;
    margin-left:23px;
    
 }
 
 #mensagem{
-	margin-left:85px;
-	position:absolute;
-	top:324px;
-	
+	margin-left:87px;
 }
 
 #botaum{
-  margin-top:90px;
-  margin-left:417px;
+  margin-top:3px;
+  margin-left:405px;
 }
+
 
 
 

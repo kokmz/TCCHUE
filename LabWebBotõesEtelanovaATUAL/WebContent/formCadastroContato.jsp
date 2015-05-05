@@ -27,8 +27,8 @@
 			</c:if>
 			<p><label id="nome_contato" for="nome">Nome:</label><input id="nome" type="text" name="nome" value="${empty duvida ? param.nome : duvida.nome }"/></p>
 			<p><label id="email_contato" for="email">Email:</label><input id="email" type="text" name="email" value="${empty duvida ? param.email : duvida.email}" /></p>
-			<p><label id="mensagem_contato" for="mensagem" >Mensagem:</label></p>
-			<textarea id="mensagem" name="mensagem" rows="6" cols="50" />${empty duvida ? param.mensagem : duvida.mensagem}</textarea>
+			<p><label id="mensagem_contato" for="mensagem" >Mensagem:</label>
+			<textarea id="mensagem" name="mensagem" rows="6" cols="50" />${empty duvida ? param.mensagem : duvida.mensagem}</textarea></p>
 			<input type="hidden" name="status" value="${duvida.status}"/>
 			<p><input type="submit" value="Enviar" id="botaum" /></p>
 	</form>
