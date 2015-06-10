@@ -171,7 +171,7 @@
 					<div class="form-wrapper">
 						<input autofocus class="formgestor"
 							id="cod_verif" type="text" name="cod_verif" readonly="readonly"
-							value="${empty paciente ? param.cod_verif : paciente.cod_verif }" placeholder="Codigo de verificação" /><label class="formgestor" for="cod_verif">Código de Verificação</label>
+							value="${empty paciente ? param.cod_verif : paciente.cod_verif }" placeholder="Codigo de verificação" readonly="readonly"/><label class="formgestor" for="cod_verif">Código de Verificação</label>
 							</div>
 					
 					<div class="form-wrapper">

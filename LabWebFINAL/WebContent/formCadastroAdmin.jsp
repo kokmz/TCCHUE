@@ -46,7 +46,7 @@
 <jsp:forward page="index.jsp"/>  
 </c:if>
 
-<h1>Cadastro de Gestor</h1>
+<h1>Cadastro de Usuário</h1>
 
 <div id="formcadusuario" class="formcadastro">
 
@@ -73,11 +73,11 @@
 			</div>
 			
 			<div class="form-wrapper">	
-			<input class="formgestor" id="password" type="password" name="password" value="${empty gestor ? param.password : gestor.password }" placeholder="Senha"/><label class="formgestor" for="password">Senha</label>
+			<input class="formgestor" id="password" type="password" name="password" value="@clinicalab123" placeholder="Senha" readonly="readonly"/><label class="formgestor" for="password">Senha</label>
 			</div>
 			
 			<div class="form-wrapper">
-			<input class="formgestor" id="conf_password" type="password" name="conf_password" value="${empty gestor ? param.conf_password : gestor.conf_password }" placeholder="Confirme a senha"/><label class="formgestor" for="conf_password">Confirme a senha</label>
+			<input class="formgestor" id="conf_password" type="password" name="conf_password" value="@clinicalab123" placeholder="Confirme a senha" readonly="readonly"/><label class="formgestor" for="conf_password">Confirme a senha</label>
 			</div>
 			<br/>
 			<input type="radio" id="opcao_adm" name="opcao" value="1" >Administrador

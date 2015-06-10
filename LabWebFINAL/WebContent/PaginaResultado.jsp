@@ -8,7 +8,7 @@
 <div id="conteudo">
 <h1>Consulta</h1>
 <p>Se desejar acessar novamente a tabela de exames realizados clique no botão a baixo</p><br/>
-<a href="BuscaResultadoServlet"><img src="images/botaoexame.png"></img></a>
+<a href="javascript:history.back()"><img src="images/botaoexame.png"></img></a>
 <a  href="BuscaResultadoExameServlet?exame=${resultado.id}" target="_blank"><img src="images/botaogerapdf.png"></img></a>
 
 <div class="box">

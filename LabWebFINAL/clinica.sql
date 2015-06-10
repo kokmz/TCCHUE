@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `exame` (
 `id_exame` int(11) NOT NULL,
   `id_tabelaExame` int(11) NOT NULL,
   `id_paciente` int(11) NOT NULL,
-  `descricao` varchar(500) NOT NULL,
+  `descricao` varchar(5000) NOT NULL,
   `id_status` int(4) NOT NULL,
   `Data_exame` date NOT NULL,
   `nome_medico` varchar(100) NOT NULL,
